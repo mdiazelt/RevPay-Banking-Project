@@ -3,10 +3,14 @@
 <!-- <div routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
 <a routerLink="/personal/personal-transaction-history">Transaction History</a>
 </div> -->
-<p>
-    <a [routerLink]="['/personal/transaction-history']"> transaction history</a>
-</p>
-
+<div class = "routerLinks">
+<nav>
+    <ul>    
+    <li><a [routerLink]="['/personal/transaction-history']"> transaction history</a></li>
+    <li><a [routerLink]="['/personal/wallet']">Wallet</a></li>
+</ul>
+</nav>
+</div>  
 <section class="card">
     <h2>Enter Card Details</h2>
 
