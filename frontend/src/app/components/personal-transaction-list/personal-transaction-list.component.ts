@@ -12,7 +12,7 @@ export class PersonalTransactionListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  backButton(){
+  backButton(): void {
     this.router.navigate(['personal']);
   }
 }
