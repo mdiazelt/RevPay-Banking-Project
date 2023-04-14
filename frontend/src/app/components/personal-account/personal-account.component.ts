@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute,Router,ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-personal-account',
@@ -6,6 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./personal-account.component.css']
 })
 
-export class PersonalAccountComponent {
+export class PersonalAccountComponent implements OnInit {
 
+    ngOnInit(): void {
+        
+    }
+  constructor(private route: ActivatedRoute, private router:Router){}
+  // showTransactions(){
+  // this.router.navigate(['overview'], {relativeTo:this.route});
+  // }
 }
+
