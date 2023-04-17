@@ -1,0 +1,12 @@
+#readonly-total{
+    border:none;
+    outline: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 19px;
+    
+}
+#note-to-customer {
+    width: 300px;
+    height: 150px;
+    resize: none;
+  }
