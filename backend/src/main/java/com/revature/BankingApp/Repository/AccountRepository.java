@@ -1,6 +1,6 @@
-package com.revature.Repository;
+package com.revature.BankingApp.Repository;
 
-import com.revature.Model.Account;
+import com.revature.BankingApp.Model.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AccountRepository<T extends Account> extends JpaRepository<T, Long> {

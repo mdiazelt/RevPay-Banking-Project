@@ -1,6 +1,9 @@
-package com.revature.Model;
+package com.revature.BankingApp.Model;
 
 import lombok.*;
+import jakarta.persistence.*;
+import java.util.Date;
+import com.fasterxml.jackson.annotation.*;
 
 @Entity
 @Data

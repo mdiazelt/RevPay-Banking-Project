@@ -1,4 +1,4 @@
-package com.revature.Model;
+package com.revature.BankingApp.Model;
 
 import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;

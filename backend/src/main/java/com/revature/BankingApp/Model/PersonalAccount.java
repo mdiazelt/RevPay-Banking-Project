@@ -1,12 +1,13 @@
-package com.revature.Model;
+package com.revature.BankingApp.Model;
 
 import lombok.*;
+import jakarta.persistence.*;
 
 @Entity
 @DiscriminatorValue(value = "PERSONAL")
 @Data
 @EqualsAndHashCode
 @AllArgsConstructor
-@NoArgsConstructor
+//@NoArgsConstructor
 public class PersonalAccount extends Account {
 }
