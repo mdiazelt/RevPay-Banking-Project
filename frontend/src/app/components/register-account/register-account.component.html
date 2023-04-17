@@ -48,7 +48,8 @@
             </form>
             <div class="link-field col s6">
                 <header>
-                  <a routerLink="placeholder"><p>Already have an account? click here</p></a>
+                    <a [routerLink]="['/login']"><p>already have an account? click here</p></a>
+                  <router-outlet></router-outlet>
                 </header>
             </div>
         </div>
