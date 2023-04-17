@@ -7,7 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SendRequestMoneyComponent implements OnInit {
 
+  contacts: String[] = [];
+  contact: String = "";
+  completedTransaction: boolean = false;
+
+
   constructor() { }
+
+  addContact() {
+    this.contacts.push(this.contact);
+  }
+
+  completeTransaction() {
+    this.completedTransaction = !this.completedTransaction;
+  }
 
   ngOnInit(): void {
   }

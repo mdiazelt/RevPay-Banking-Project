@@ -8,6 +8,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SendRequestMoneyComponent } from './components/send-request-money/send-request-money.component';
 import { PersonalWalletComponent } from './components/personal-wallet/personal-wallet.component';
 import { BusinessAccountComponent } from './components/business-account/business-account.component';
+import { PersonalTransactionListComponent } from './components/personal-transaction-list/personal-transaction-list.component';
 import { RegisterAccountComponent } from './components/register-account/register-account.component';
 import { LoginAccountComponent } from './components/login-account/login-account.component';
 
@@ -19,6 +20,7 @@ import { LoginAccountComponent } from './components/login-account/login-account.
     SendRequestMoneyComponent,
     PersonalWalletComponent,
     BusinessAccountComponent,
+    PersonalTransactionListComponent,
     RegisterAccountComponent,
     LoginAccountComponent
   ],
