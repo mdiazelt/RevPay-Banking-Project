@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PersonalAccountComponent } from './components/personal-account/personal-account.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SendRequestMoneyComponent } from './components/send-request-money/send-request-money.component';
 import { PersonalWalletComponent } from './components/personal-wallet/personal-wallet.component';
+import { BusinessAccountComponent } from './components/business-account/business-account.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +15,13 @@ import { PersonalWalletComponent } from './components/personal-wallet/personal-w
     PersonalAccountComponent,
     NavbarComponent,
     SendRequestMoneyComponent,
-    PersonalWalletComponent
+    PersonalWalletComponent,
+    BusinessAccountComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
