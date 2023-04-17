@@ -7,6 +7,7 @@ import { PersonalWalletComponent } from './components/personal-wallet/personal-w
 import { BusinessAccountComponent } from './components/business-account/business-account.component';
 import { RegisterAccountComponent } from './components/register-account/register-account.component';
 import { LoginAccountComponent } from './components/login-account/login-account.component';
+import { BusinessInvoicesComponent } from './components/business-invoices/business-invoices.component';
 
 const routes: Routes = [
 
@@ -35,6 +36,10 @@ const routes: Routes = [
     }
     ],
   },
+  {path:'business', children:[
+    {path:'send-invoices', component:BusinessInvoicesComponent
+  },
+  ]}
 ];
 
 @NgModule({
