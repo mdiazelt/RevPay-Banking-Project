@@ -6,7 +6,6 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./business-account.component.css']
 })
 export class BusinessAccountComponent implements OnInit {
-
   constructor() {
     
   }

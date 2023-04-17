@@ -9,6 +9,8 @@ import { SendRequestMoneyComponent } from './components/send-request-money/send-
 import { PersonalWalletComponent } from './components/personal-wallet/personal-wallet.component';
 import { BusinessAccountComponent } from './components/business-account/business-account.component';
 import { PersonalTransactionListComponent } from './components/personal-transaction-list/personal-transaction-list.component';
+import { RegisterAccountComponent } from './components/register-account/register-account.component';
+import { LoginAccountComponent } from './components/login-account/login-account.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PersonalTransactionListComponent } from './components/personal-transact
     SendRequestMoneyComponent,
     PersonalWalletComponent,
     BusinessAccountComponent,
-    PersonalTransactionListComponent
+    PersonalTransactionListComponent,
+    RegisterAccountComponent,
+    LoginAccountComponent
   ],
   imports: [
     BrowserModule,

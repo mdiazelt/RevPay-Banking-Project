@@ -1,0 +1,24 @@
+<div class="login-forms">
+    <header class="login-form-header">
+        <h2>Log into your account</h2>
+    </header>
+    <div class="forms">
+        <form >
+            <div class="input-fields col s6">
+                <label for="username">please enter your username</label>
+                <input type="text" class="username" placeholder="username">
+            </div>
+            <div class="input-fields col s6">
+                <label for="password">please enter your password</label>
+                <input type="password" class="password" placeholder="password">
+            </div>
+            <div class="button-submit">
+                <button>Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="routerlinks">
+<a [routerLink]="['/register']"><p>need an account? click here</p></a>
+<router-outlet></router-outlet>
+</div>
