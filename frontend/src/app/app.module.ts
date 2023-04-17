@@ -11,6 +11,7 @@ import { BusinessAccountComponent } from './components/business-account/business
 import { PersonalTransactionListComponent } from './components/personal-transaction-list/personal-transaction-list.component';
 import { RegisterAccountComponent } from './components/register-account/register-account.component';
 import { LoginAccountComponent } from './components/login-account/login-account.component';
+import { BusinessInvoicesComponent } from './components/business-invoices/business-invoices.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoginAccountComponent } from './components/login-account/login-account.
     BusinessAccountComponent,
     PersonalTransactionListComponent,
     RegisterAccountComponent,
-    LoginAccountComponent
+    LoginAccountComponent,
+    BusinessInvoicesComponent
   ],
   imports: [
     BrowserModule,
