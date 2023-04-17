@@ -1,21 +1,44 @@
-<p>personal-account works!</p>
+<h1>My Account</h1>
+
+<!-- <div routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+<a routerLink="/personal/personal-transaction-history">Transaction History</a>
+</div> -->
+<div class = "routerLinks">
+<nav>
+    <ul>    
+    <li><a [routerLink]="['/personal/transaction-history']"> transaction history</a></li>
+    <li><a [routerLink]="['/personal/wallet']">Wallet</a></li>
+</ul>
+</nav>
+</div>  
 <section class="card">
     <h2>Enter Card Details</h2>
 
     <h3>Cardholder's Name</h3>
-    <input placeholder="Type Here">
+    <input placeholder="Full name">
 
     <h3>Card Number</h3>
-    <input placeholder="Type Here">
+    <input placeholder="16-digit card number">
 
     <h3>Expiration Date</h3>
-    <input placeholder="Type Here">
+    <input placeholder="Exp date">
 
     <h3>Security Number</h3>
-    <input placeholder="Type Here">
+    <input placeholder="3-digit security number">
 
     <br>
     <button>Add Card</button>
 </section>
+<section class="bank">
+    <h2>Link Bank Account</h2>
 
+    <h3>Account Number</h3>
+    <input placeholder="Account number">
 
+    <h3>Routing Number</h3>
+    <input placeholder="Routing number">
+
+    <br>
+    <button>Link Account</button>
+</section>
+<router-outlet></router-outlet>
