@@ -1,0 +1,93 @@
+<div class = "routerLinks">
+    <nav>
+        <ul>    
+        <li><a [routerLink]="['/placeholder']"> Invoices</a></li>
+        <li><a [routerLink]="['/placeholder']">Loans</a></li>
+        <li><a [routerLink]="['/placeholder']">Transfer history</a></li>
+    </ul>
+    </nav>
+    </div>  
+<div>
+    <header class = "bus_header">
+        <h1>
+             Business Profile
+        </h1>
+    </header>
+</div>
+
+<div>
+    <p>
+        hello, user
+    </p>
+</div>
+
+<div class="credit_info_text">
+    <header class = "credit_text">
+        <p>
+            Please make sure to fill out every box before submiting!
+        </p>
+    </header>
+</div>
+<div class ="credit_info_forms">
+    <form>
+        <label for="credit_name">Enter your full name</label>
+        <input type="text" name="text" id="credit_name" placeholder="full name">
+
+        <label for="credit_number">Enter credit card number</label>
+        <input  type="text" id="credit_number" placeholder="16 digit number" maxlength="16" (keypress)="numbersOnly($event)">
+
+        <label for="pwd">Enter credit card Security </label>
+        <input type="password" name="pwd" id="pwd" placeholder="3 digit number" maxlength="3" pattern="\d{3}" (keypress)="numbersOnly($event)">
+</form>
+<div class="expirary_date">
+    <select name='expireMM' id='expireMM'>
+        <option value=''>Month</option>
+        <option value='01'>January</option>
+        <option value='02'>February</option>
+        <option value='03'>March</option>
+        <option value='04'>April</option>
+        <option value='05'>May</option>
+        <option value='06'>June</option>
+        <option value='07'>July</option>
+        <option value='08'>August</option>
+        <option value='09'>September</option>
+        <option value='10'>October</option>
+        <option value='11'>November</option>
+        <option value='12'>December</option>
+    </select> 
+    <select name='expireYY' id='expireYY'>
+        <option value=''>Year</option>
+        <option value='23'>2023</option>
+        <option value='24'>2024</option>
+        <option value='25'>2025</option>
+        <option value='26'>2026</option>
+        <option value='27'>2027</option>
+        <option value='28'>2028</option>
+        <option value='29'>2029</option>
+    </select> 
+    <label for="inputCard">Or enter manually</label>
+    <input class="inputCard" type="text" name="expiry" id="expiry" placeholder="Enter the month: Ex:01" maxlength="2" pattern="(0[1-9]|1[0-2])" (keypress)="numbersOnly($event)" />
+    <input class="inputCard" type="text" name="expiry" id="expiry" placeholder="Enter the year: Ex:23" maxlength="2" (keypress)="numbersOnly($event)" />
+</div>
+</div>
+<div class="submit_button">
+    <button>add card</button>
+</div>
+<div class="list_of_cards">
+    <header class ="card_list_header">
+    <h3>
+        Credit cards
+    </h3>
+    <p>
+        your card information!
+    </p>
+</header>
+    <ul class = "ol_cards">
+        <li>
+            placeholder
+        </li>
+        <li>
+            placeholder
+        </li>
+    </ul>
+</div>
