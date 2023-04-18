@@ -12,6 +12,8 @@ import { PersonalTransactionListComponent } from './components/personal-transact
 import { RegisterAccountComponent } from './components/register-account/register-account.component';
 import { LoginAccountComponent } from './components/login-account/login-account.component';
 import { BusinessInvoicesComponent } from './components/business-invoices/business-invoices.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { BusinessInvoicesComponent } from './components/business-invoices/busine
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
