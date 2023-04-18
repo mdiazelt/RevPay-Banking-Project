@@ -20,7 +20,10 @@
 
 <section>
     <h2>Saved Contacts</h2>
-    <div *ngFor="let contact of contacts">
-        <p>{{contact}}</p>
+    <div *ngFor="let contact of contacts; index as i">
+        <div class="contact" *ngIf="mounted">
+            <p>{{contact}}</p>
+            <button (click)="deleteContact(i)">Delete</button>
+        </div>
     </div>
 </section>
