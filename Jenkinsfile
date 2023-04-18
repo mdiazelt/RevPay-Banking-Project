@@ -16,7 +16,8 @@ pipeline {
                 // some block
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
                 sh "cp target/*.jar /usr/local/share/applications/bank-api/javaapp.jar"
-                
+                sh "sudo systemctl restart bank-api.service"
+                junit '**/target/surefire-reports/TEST-*.xml'
                 }
                 // Run Maven on a Unix agent.
 
@@ -28,8 +29,7 @@ pipeline {
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.
                 success {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
+                    
                 }
             }
         }
