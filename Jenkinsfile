@@ -6,11 +6,12 @@ pipeline {
         maven "M3"
     }
 
+     // Get some code from a GitHub repository
+    git branch:'maria', url:'https://github.com/mdiazelt/RevPay-Banking-Project.git'
+    
     stages {
-        stage('Build') {
+        stage('Build API') {
             steps {
-                // Get some code from a GitHub repository
-                git branch:'maria', url:'https://github.com/mdiazelt/RevPay-Banking-Project.git'
 
                 dir('backend') {
                 // some block
@@ -19,12 +20,17 @@ pipeline {
                 sh "sudo systemctl restart bank-api.service"
                 junit '**/target/surefire-reports/TEST-*.xml'
                 }
-                // Run Maven on a Unix agent.
-
-                // To run Maven on a Windows agent, use
-                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
 
+        }
+        stage('Build UI') {
+            steps {
+                dir('frontend') {
+                    sh "npm install"
+                    sh "npm run build"
+                    sh "cp dist/bank-app/* /usr/share/nginx/html"
+                }
+            }
         }
     }
 }
