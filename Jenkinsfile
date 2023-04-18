@@ -6,12 +6,12 @@ pipeline {
         maven "M3"
     }
 
-     // Get some code from a GitHub repository
-    git branch:'maria', url:'https://github.com/mdiazelt/RevPay-Banking-Project.git'
     
     stages {
         stage('Build API') {
             steps {
+                // Get some code from a GitHub repository
+                git branch:'maria', url:'https://github.com/mdiazelt/RevPay-Banking-Project.git'
 
                 dir('backend') {
                 // some block
