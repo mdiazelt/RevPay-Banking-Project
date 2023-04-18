@@ -15,6 +15,8 @@ pipeline {
                 dir('backend') {
                 // some block
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                sh "cp target/*.jar /usr/local/share/applications/bank-api/"
+                
                 }
                 // Run Maven on a Unix agent.
 
