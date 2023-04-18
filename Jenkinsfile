@@ -28,7 +28,7 @@ pipeline {
                 dir('frontend') {
                     sh "npm install"
                     sh "npm run build"
-                    sh "sudo rm -f /usr/share/nginx/html/*"
+                    sh "sudo rm -rf /usr/share/nginx/html/*"
                     sh "sudo cp dist/bank-app/* /usr/share/nginx/html"
                 }
             }
