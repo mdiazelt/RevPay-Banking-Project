@@ -21,13 +21,14 @@
     <input placeholder="16-digit card number">
 
     <h3>Expiration Date</h3>
-    <input placeholder="Exp date">
+    <input type="date" placeholder="Exp date">
 
     <h3>Security Number</h3>
     <input placeholder="3-digit security number">
 
     <br>
-    <button>Add Card</button>
+    <button (click)="submittedCard()">Add Card</button>
+    <p *ngIf="addCard">Your card has been added!</p>
 </section>
 <section class="bank">
     <h2>Link Bank Account</h2>
@@ -39,6 +40,7 @@
     <input placeholder="Routing number">
 
     <br>
-    <button>Link Account</button>
+    <button (click)="submittedBank()">Link Account</button>
+    <p *ngIf="addBank">Bank account successfully linked!</p>
 </section>
 <router-outlet></router-outlet>
