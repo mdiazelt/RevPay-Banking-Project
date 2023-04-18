@@ -1,23 +1,29 @@
 <div class="login-forms">
+    <div class="container">
     <header class="login-form-header">
-        <h2>Log into your account</h2>
+        <h2>Sign in with your RevPay ID</h2>
     </header>
     <div class="forms">
-        <form >
-            <div class="input-fields col s6">
-                <label for="username">please enter your username</label>
-                <input type="text" class="username" placeholder="username">
-            </div>
-            <div class="input-fields col s6">
-                <label for="password">please enter your password</label>
-                <input type="password" class="password" placeholder="password">
-            </div>
-            <div class="button-submit">
-                <button>Submit</button>
-            </div>
-        </form>
+        <div class="form-cell-wrapper form-textbox">
+            <form >
+                <div class="input-fields">
+                    <input type="text" id="username" required placeholder="">
+                    <span id="revPayID_field_label">username</span>
+                </div>
+
+                <div class="input-fields2">
+                    <input type="password" id="password" required placeholder="">
+                    <span for="password" id="revPayID_field_label">password</span>
+                </div>
+                <div class="button-submit">
+                    <button id="button-submit">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+
+
 <div class="routerlinks">
 <a [routerLink]="['/register']"><p>need an account? click here</p></a>
 <router-outlet></router-outlet>

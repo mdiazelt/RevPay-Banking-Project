@@ -22,7 +22,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { FloatLabelType } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -42,6 +41,8 @@ import { FloatLabelType } from '@angular/material/form-field';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
