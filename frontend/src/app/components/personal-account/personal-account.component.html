@@ -4,32 +4,83 @@
 <a routerLink="/personal/personal-transaction-history">Transaction History</a>
 </div> -->
 <div class = "routerLinks">
-<nav>
-    <ul>    
-    <li><a [routerLink]="['/personal/transaction-history']"> transaction history</a></li>
-    <li><a [routerLink]="['/personal/wallet']">Wallet</a></li>
-</ul>
-</nav>
-</div>  
-<section class="card">
-    <h2>Enter Card Details</h2>
+    <nav>
+        <ul>    
+            <li><a [routerLink]="['/personal/transaction-history']"> transaction history</a></li>
+            <li><a [routerLink]="['/personal/wallet']">Wallet</a></li>
+        </ul>
+    </nav>
+</div>
 
-    <h3>Cardholder's Name</h3>
-    <input placeholder="Full name">
+<form [formGroup]="cardForm" class="form-container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                Enter Card Details
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                        <input formControlName="name" matInput placeholder="Full Name">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                        <input formControlName="number" matInput placeholder="16-Digit Card Number">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Expiration Date</mat-label>
+                        <input formControlName="date" matInput [matDatepicker]="picker">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                        <input formControlName="security" matInput placeholder="3-Digit Security Code">
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary">
+                Add Card
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</form>
 
-    <h3>Card Number</h3>
-    <input placeholder="16-digit card number">
+<!-- <section class="card">
+    <form>
+        <h2>Enter Card Details</h2>
 
-    <h3>Expiration Date</h3>
-    <input type="date" placeholder="Exp date">
+        <h3>Cardholder's Name</h3>
+        <mat-form-field appearance="fill">
+            <input matInputplaceholder="Full name" required>
+        </mat-form-field>
 
-    <h3>Security Number</h3>
-    <input placeholder="3-digit security number">
+        <h3>Card Number</h3>
+        <input placeholder="16-digit card number">
 
-    <br>
-    <button (click)="submittedCard()">Add Card</button>
-    <p *ngIf="addCard">Your card has been added!</p>
+        <h3>Expiration Date</h3>
+        <input type="date" placeholder="Exp date">
+
+        <h3>Security Number</h3>
+        <input placeholder="3-digit security number">
+
+        <br>
+        <button (click)="submittedCard()">Add Card</button>
+        <p *ngIf="addCard">Your card has been added!</p>
+    </form>
 </section>
+-->
+
 <section class="bank">
     <h2>Link Bank Account</h2>
 
