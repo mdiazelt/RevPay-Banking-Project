@@ -14,4 +14,9 @@ public class PersonalAccountController {
 	public PersonalAccountController(PersonalAccountService personalAccountService) {
 		this.personalAccountService = personalAccountService;
 	}
+
+	@PostMapping("personal/register")
+	public PersonalAccount newPersonal(@RequestBody PersonalAccount personalAccount) {
+		return personalAccountService.newPersonal(personalAccount);
+	}
 }
