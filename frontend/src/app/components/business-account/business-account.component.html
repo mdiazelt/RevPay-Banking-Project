@@ -1,94 +1,128 @@
-<div class = "routerLinks">
-    <nav>
-        <ul>    
-        <li><a [routerLink]="['/business/send-invoices']"> Invoices</a></li>
-        <li><a [routerLink]="['/placeholder']">Loans</a></li>
-        <li><a [routerLink]="['/placeholder']">Transfer history</a></li>
-        <router-outlet></router-outlet>
-    </ul>
-    </nav>
-    </div>  
-<div>
-    <header class = "bus_header">
-        <h1>
-             Business Profile
-        </h1>
-    </header>
-</div>
+<body>
+    <div class="nav-container">
+        <nav class="navclass">
+            <ul class="navbar-nav-ul">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/placeholder']">
+                        <fa-icon class="fa-primary" [icon]="faLandmark"></fa-icon>
+                        <span class="link-text">Loans</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/business/send-invoices']">
+                        <fa-icon class="fa-primary" [icon]="faFileInvoiceDollar"></fa-icon>
+                        <span class="link-text">Invoices</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/placeholder']">
+                        <fa-icon class="fa-primary" [icon]="faFileCode"></fa-icon>
+                        <span class="link-text">Transfer History</span>
+                    </a>
+                </li>
+                <router-outlet></router-outlet>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <div class="container">
+            <div class="bus-header-div">
+                <header class="bus_header">
+                    <h1>Business Profile</h1>
+                    <p>hello, user</p>
+                </header>
+            </div>
 
-<div>
-    <p>
-        hello, user
-    </p>
-</div>
+            <div class="credit_info_text">
+                <div class="container-fields">
+                    <mat-card class="card-template">
+                        <form>
+                            <div class="input-fields">
+                                <mat-form-field class="mat-fields" appearance="fill">
+                                    <mat-label for="credit_name">Enter your full name</mat-label>
+                                    <input class="input-texts" matInput type="text" name="text" id="credit_name">
+                                </mat-form-field>
+                            </div>
 
-<div class="credit_info_text">
-    <header class = "credit_text">
-        <p>
-            Please make sure to fill out every box before submiting!
-        </p>
-    </header>
-</div>
-<div class ="credit_info_forms">
-    <form>
-        <label for="credit_name">Enter your full name</label>
-        <input type="text" name="text" id="credit_name" placeholder="full name">
+                            <div class="input-fields">
+                                <mat-form-field class="mat-fields" appearance="fill">
+                                    <mat-label for="credit_number">Enter credit card number</mat-label>
+                                    <input class="input-texts" matInput type="text" id="credit_number" maxlength="16"
+                                        (keypress)="numbersOnly($event)">
+                                </mat-form-field>
+                            </div>
 
-        <label for="credit_number">Enter credit card number</label>
-        <input  type="text" id="credit_number" placeholder="16 digit number" maxlength="16" (keypress)="numbersOnly($event)">
+                            <div class="input-fields">
+                                <mat-form-field class="mat-fields" appearance="fill">
+                                    <mat-label for="pwd">Enter credit card Security </mat-label>
+                                    <input class="input-texts" matInput type="password" name="pwd" id="pwd"
+                                        maxlength="3" pattern="\d{3}" (keypress)="numbersOnly($event)">
+                                </mat-form-field>
+                            </div>
 
-        <label for="pwd">Enter credit card Security </label>
-        <input type="password" name="pwd" id="pwd" placeholder="3 digit number" maxlength="3" pattern="\d{3}" (keypress)="numbersOnly($event)">
-</form>
-<div class="expirary_date">
-    <select name='expireMM' id='expireMM'>
-        <option value=''>Month</option>
-        <option value='01'>January</option>
-        <option value='02'>February</option>
-        <option value='03'>March</option>
-        <option value='04'>April</option>
-        <option value='05'>May</option>
-        <option value='06'>June</option>
-        <option value='07'>July</option>
-        <option value='08'>August</option>
-        <option value='09'>September</option>
-        <option value='10'>October</option>
-        <option value='11'>November</option>
-        <option value='12'>December</option>
-    </select> 
-    <select name='expireYY' id='expireYY'>
-        <option value=''>Year</option>
-        <option value='23'>2023</option>
-        <option value='24'>2024</option>
-        <option value='25'>2025</option>
-        <option value='26'>2026</option>
-        <option value='27'>2027</option>
-        <option value='28'>2028</option>
-        <option value='29'>2029</option>
-    </select> 
-    <label for="inputCard">Or enter manually</label>
-    <input class="inputCard" type="text" name="expiry" id="expiry" placeholder="Enter the month: Ex:01" maxlength="2" pattern="(0[1-9]|1[0-2])" (keypress)="numbersOnly($event)" />
-    <input class="inputCard" type="text" name="expiry" id="expiry" placeholder="Enter the year: Ex:23" maxlength="2" (keypress)="numbersOnly($event)" />
-</div>
-</div>
-<div class="submit_button">
-    <button>add card</button>
-</div>
-<div class="list_of_cards">
-    <header class ="card_list_header">
-    <h3>
-        Credit cards
-    </h3>
-    <p>
-        your card information!
-    </p>
-</header>
-    <ul class = "ol_cards">
-        <li>
-            placeholder
-        </li>
-        <li>
-            placeholder
-        </li>
-    </ul>
-</div>
+                            <div class="expirary_date">
+                                <mat-form-field class="mat-fields" appearance="fill">
+                                    <mat-label>Month</mat-label>
+                                    <mat-select class="input-texts" name='expireMM' id='expireMM'>
+                                        <mat-option value='01'>January</mat-option>
+                                        <mat-option value='02'>February</mat-option>
+                                        <mat-option value='03'>March</mat-option>
+                                        <mat-option value='04'>April</mat-option>
+                                        <mat-option value='05'>May</mat-option>
+                                        <mat-option value='06'>June</mat-option>
+                                        <mat-option value='07'>July</mat-option>
+                                        <mat-option value='08'>August</mat-option>
+                                        <mat-option value='09'>September</mat-option>
+                                        <mat-option value='10'>October</mat-option>
+                                        <mat-option value='11'>November</mat-option>
+                                        <mat-option value='12'>December</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field class="mat-fields" appearance="fill">
+                                    <mat-label value=''>Year</mat-label>
+                                    <mat-select class="input-texts" name='expireYY' id='expireYY'>
+                                        <mat-option value='23'>2023</mat-option>
+                                        <mat-option value='24'>2024</mat-option>
+                                        <mat-option value='25'>2025</mat-option>
+                                        <mat-option value='26'>2026</mat-option>
+                                        <mat-option value='27'>2027</mat-option>
+                                        <mat-option value='28'>2028</mat-option>
+                                        <mat-option value='29'>2029</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+                                <div class="input-expirary-fields">
+                                    <div>
+                                        <label for="inputCard">Or enter manually</label>
+                                    </div>
+
+                                    <div class="input-fields">
+                                        <mat-form-field class="mat-fields" appearance="fill">
+                                            <mat-label>Month</mat-label>
+                                            <input class="input-texts" matInput type="text" name="expiry" id="expiry"
+                                                maxlength="2" pattern="(0[1-9]|1[0-2])"
+                                                (keypress)="numbersOnly($event)" />
+                                        </mat-form-field>
+                                    </div>
+
+
+                                    <div class="input-fields">
+                                        <mat-form-field class="mat-fields" appearance="fill">
+                                            <mat-label>Year</mat-label>
+                                            <input class="input-texts" matInput type="text" name="expiry" id="expiry"
+                                                maxlength="2" (keypress)="numbersOnly($event)" />
+                                        </mat-form-field>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="submit_button">
+                                <button>add card</button>
+                            </div>
+                        </form>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
