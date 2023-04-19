@@ -11,7 +11,7 @@ pipeline {
         stage('Build API') {
             steps {
                 // Get some code from a GitHub repository
-                git branch:'maria', url:'https://github.com/mdiazelt/RevPay-Banking-Project.git'
+                git branch:'main', url:'https://github.com/mdiazelt/RevPay-Banking-Project.git'
 
                 dir('backend') {
                 // some block
