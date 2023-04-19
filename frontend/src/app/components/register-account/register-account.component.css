@@ -1,0 +1,201 @@
+
+.header-text-name{
+
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 30px;
+    color: white;
+    letter-spacing: .045em;
+    text-align: center;
+
+}
+#register-button{
+    font-family: 'Reem Kufi Fun', sans-serif;
+    align-items: center;
+    border-radius: 10px;
+    display: inline-flex;
+    font-size: 19px;
+    font-weight: 200;
+    color: white;
+    background: #da0f47;
+    border-color: #da0f47;
+    height: 28px;
+    justify-content: center;
+    letter-spacing: 0;
+    margin-top: 1rem;
+    margin-left: -15.0rem;
+    position: relative;
+ 
+    
+
+}
+
+/* input:not(:focus){
+    border-color: #ff3037;
+    background-color:#300;
+} */
+#email{
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: black;
+    border-color: #424245;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    padding: 2px;
+    margin: 10px;
+    width: 55%;
+    height: 2.8rem;
+    border-radius: 15px;
+    border-width: 1px;
+}
+#first_name{
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: black;
+    border-color: #424245;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    padding: 2px;
+    margin: 10px;
+    width: 55%;
+    height: 2.8rem;
+    border-radius: 15px;
+    border-width: 1px;
+}
+#last_name{
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: black;
+    border-color: #424245;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    padding: 2px;
+    margin: 10px;
+    width: 55%;
+    height: 2.8rem;
+    border-radius: 15px;
+    border-width: 1px;
+}
+#username{
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: black;
+    border-color: #424245;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    padding: 2px;
+    margin: 10px;
+    width: 55%;
+    height: 2.8rem;
+    border-radius: 15px;
+    border-width: 1px;
+}
+#password{
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: black;
+    border-color: #424245;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    padding: 2px;
+    margin: 10px;
+    width: 55%;
+    height: 2.8rem;
+    border-radius: 15px;
+    border-width: 1px;
+}
+#phone{
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: black;
+    border-color: #424245;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    padding: 2px;
+    margin: 10px;
+    width: 55%;
+    height: 2.8rem;
+    border-radius: 15px;
+    border-width: 1px;
+}
+#account-type-field{
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: black;
+    border-color: #424245;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    padding: 2px;
+    margin: 10px;
+    width: 55%;
+    height: 2.8rem;
+    border-radius: 15px;
+    border-width: 1px;
+}
+#username-label{
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: -.015em;
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+#account-type-label{
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: -.015em;
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+#password-label{
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: -.015em;
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.row input {
+    display:flex;
+
+}
+.input-field select{
+    display:flex;
+    justify-content: center;
+}
+label {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: #999;
+}
+
+.create-account{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(to top, #2c2c2e 50%, rgb(43, 43, 100)90%) no-repeat;    
+}
+
+#account-button{
+    font-family: 'Reem Kufi Fun', sans-serif;
+    border-radius: 10px;
+    font-size: 19px;
+    color: white;
+    background: #da0f47;
+    border-color: #da0f47;
+    padding: 0 12px;
+    margin-top: -2rem;
+    margin-left: 11.0rem;
+    position: relative;
+}
+
+.container{
+    min-width: 500px;
+    min-height: 580px;
+    box-shadow: 10px 10px 65px rgb(143, 137, 137);
+    border-radius: 12px;
+    margin-top: 100px;
+
+}

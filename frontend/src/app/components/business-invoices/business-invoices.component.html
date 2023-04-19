@@ -1,0 +1,50 @@
+<div class = "routerLinks">
+    <nav>
+        <header class="router-header">
+        <button (click)="backButton()"> Back to account</button>
+        <router-outlet></router-outlet>
+    </header>
+    </nav>
+<div>
+<div class="header">
+    <header class="invoice-header">
+        <h1>Invoices</h1>
+    </header>
+</div>
+<div class="text-header">
+    <header class="text-to-send">
+        <h3>Create your invoices</h3>
+    </header>
+</div>
+<div class="input-forms">
+    <div class="input-boxes">
+        <form>
+            <div class="input-fields col s6">
+                <label for="bill-to">Bill to </label>
+                <input type="text" class="bil-to" placeholder="name of recipiant">
+            </div>
+            <div class="input-fields col s6">
+                <label for="service">add an item or service</label>
+                <input type="text" class="service" placeholder="item or service">
+            </div>
+            <div class="input-fields col s6">
+                <label for="price">Amount</label>
+                <input type="text" class="price" placeholder="$0.00">
+            </div>
+            <div class="input-fields-button col s6">
+                <button>Add</button>
+            </div>
+            <div class="input-fields-added col s6">
+                <label for="total">Total:</label>
+                <input type="text" id="readonly-total" readonly placeholder="$0.00 USD">
+            </div>
+            <div class="input-fields col s6">
+                <textarea id="note-to-customer" name="note-to-customer" placeholder="Note to customer" maxlength="250" (input)="updateCharacterCount($event)"></textarea>
+                <small class="text-muted">{{characterCount}}/{{maxLength}}</small>
+            </div>
+            <div class="input-fields-send-button col s6">
+                <button>Send</button>
+            </div>
+        </form>
+    </div>
+</div>
