@@ -1,0 +1,19 @@
+[Unit]
+Description= Bank-api simple service
+After=syslog.target network.target
+
+[Service]
+SuccessExitStatus=143
+
+User=appuser
+Group=appgroup
+
+Type=simple
+
+
+WorkingDirectory=/usr/local/share/applications/bank-api
+ExecStart=/usr/lib/jvm/java-17-amazon-corretto/bin/java -jar javaapp.jar
+ExecStop=/bin/kill -15 $MAINPID
+
+[Install]
+WantedBy=multi-user.target
