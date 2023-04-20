@@ -14,4 +14,9 @@ public class BusinessAccountController {
 	public BusinessAccountController(BusinessAccountService businessAccountService) {
 		this.businessAccountService = businessAccountService;
 	}
+
+	@PostMapping("business/register")
+	public BusinessAccount newBusiness(@RequestBody BusinessAccount businessAccount) {
+		return businessAccountService.newBusiness(businessAccount);
+	}
 }

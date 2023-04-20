@@ -8,20 +8,13 @@ import com.revature.BankingApp.Model.*;
 
 @Service
 @Transactional
-public class AccountService {
+public class CardService {
+	CardRepository cardRepository;
 	AccountRepository<Account> accountRepository;
 
 	@Autowired
-	public AccountService(AccountRepository<Account> accountRepository) {
+	CardService(CardRepository cardRepository, AccountRepository accountRepository) {
+		this.cardRepository = cardRepository;
 		this.accountRepository = accountRepository;
-	}
-
-	public Account login(Account account) {
-		Account a = accountRepository.findByUsernameAndPasswd(account.getUsername(), account.getPasswd());
-		/*
-		if (a != null)
-			a.setSessionToken((long)(Math.random() * Long.MAX_VALUE));
-		*/
-		return a;
 	}
 }

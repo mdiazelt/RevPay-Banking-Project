@@ -10,6 +10,9 @@ import com.fasterxml.jackson.annotation.*;
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIdentityInfo(
+  generator = ObjectIdGenerators.PropertyGenerator.class, 
+  property = "id")
 public class Transaction {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,11 +26,9 @@ public class Transaction {
 	private double amount;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JsonManagedReference(value = "transactions")
-	//@JoinColumn(name = "transactions", nullable = true)
+	@JoinColumn(name = "account_from", nullable = true)
 	private Account from;
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JsonManagedReference(value = "transactions")
-	//@JoinColumn(name = "transactions", nullable = true)
+	@JoinColumn(name = "account_to", nullable = true)
 	private Account to;
 }

@@ -24,6 +24,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatDatepickerModule,
     MatNativeDateModule,
     MatRadioModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

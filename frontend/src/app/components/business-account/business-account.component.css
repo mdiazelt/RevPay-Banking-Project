@@ -1,6 +1,108 @@
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+
+.navclass{
+ float: left;
+ height: 100vh;
+ width: 8rem;
+ top: 0px;
+ overflow: hidden;
+ background-color:  #2c2c2e;
+ transition: width 200ms ease;
+}
+.navbar-nav-ul{
+  list-style: none;
+  padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-item{
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+body{
+  overflow-y: scroll;
+  overflow-y: hidden;
+  color: black;
+  height: 100vh;
+  background: linear-gradient(to top, #4c4c4c 59%, #3f51b5 90%) no-repeat;
+  margin: 0;
+  padding: 0;
+}
+main{
+  margin-left:14rem;
+}
+
+.nav-link{
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  text-decoration: none;
+  color: #fa586a;
+  transition: 600ms;
+}
+.nav-link:hover{
+  color: #7d7aff;
+  filter: grayscale(69%) opacity(97%);
+  background: #4c4c4c;
+}
+.link-text{
+  font-family: 'Reem Kufi Fun', sans-serif;
+  font-weight: 600;
+  color: white;
+  overflow: hidden;
+  letter-spacing: 1px;
+  margin-left: 1rem;
+}
+.nav-link, .fa-primary{
+  
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+.navclass:hover{
+  width: 14rem;
+}
+.navclass:hover .link-text{
+
+  display: block;
+}
+.list_of_cards{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+.fa-primary{
+  font-size: 42px;
+}
+
+.fa-primary{
+  transition:600ms;
+}
+
+
+mat-label{
+  color: white;
+  font-style: italic;
+}
+
+.container-fields{
+  min-width:28em;
+  height: 35em;
+  box-shadow: 10px 10px 65px rgb(8, 8, 8);
+  border-radius: 12px;
+  margin-top: 75px;
+}
+.card-template{
+  background-color: #2c2c2e;
+}
+.bus-header-div{
+  text-align: center;
+}
+.input-texts{
+  color: wheat;
+}
+mat-select{
+  color: wheat;
 }
