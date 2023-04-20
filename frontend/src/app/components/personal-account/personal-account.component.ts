@@ -11,6 +11,9 @@ import {FloatLabelType} from '@angular/material/form-field';
 
 export class PersonalAccountComponent implements OnInit {
 
+  myControl = new FormControl('');
+  options1: String[] = ['Checkings', 'Savings'];
+
   addCard: boolean = false;
   addBank: boolean = false;
 
@@ -44,7 +47,15 @@ export class PersonalAccountComponent implements OnInit {
     number:[''],
     date:[''],
     security:[''],
+    cardType:['']
   })
+
+  bankForm = this._formBuilder.group({
+    account:[''],
+    routing:[''],
+    accoutType:['']
+  })
+
   // showTransactions(){
   // this.router.navigate(['overview'], {relativeTo:this.route});
   // }

@@ -1,10 +1,70 @@
 <section>
     <h1>Make a Transaction</h1>
-    <h3>Add a contact</h3>
-    <input placeholder="Enter Contact" type = "text" [(ngModel)]="contact" #input>
-    <button (click)="addContact()">Add Contact</button>
+</section>
+    <div class="container">
+        <form class="form">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title class="header">
+                        Add A Contact
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Contact Name</mat-label>
+                        <input matInput placeholder="Enter Contact" type = "text" [(ngModel)]="contact" [ngModelOptions]="{standalone: true}" #input>
+                    </mat-form-field>
+                    <button (click)="addContact()" mat-raised-button color="primary">
+                        Add Contact
+                    </button>
+                </mat-card-content>
+            </mat-card>
+        </form>
+    </div>
+    <!-- <input placeholder="Enter Contact" type = "text" [(ngModel)]="contact" #input>
+    <button (click)="addContact()">Add Contact</button> -->
+    
+    <div class="container">
+        <form class="form">
+            <mat-card>
+                <mat-card-header>
+                   <mat-card-title class="header">
+                    Amount
+                   </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div>
+                        <mat-form-field appearance="fill" floatLabel="always">
+                            <mat-label>Amount</mat-label>
+                            <div class="amount">
+                                <span matTextPrefix>$&nbsp;</span>
+                                <input matInput type="number" placeholder="0">
+                                
+                            </div>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field class="full-width" appearance="fill">
+                            <mat-label>Transaction Type</mat-label>
+                            <input type="text"
+                                   placeholder="Select Transaction"
+                                   aria-label="Transaction Type"
+                                   matInput
+                                   [formControl]="myControl"
+                                   [matAutocomplete]="auto">
+                            <mat-autocomplete #auto="matAutocomplete">
+                              <mat-option *ngFor="let option of options1" [value]="option">
+                                {{option}}
+                              </mat-option>
+                            </mat-autocomplete>
+                          </mat-form-field>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </form>
+    </div>
 
-    <h3>Amount</h3>
+    <!--
     <input placeholder="Enter Amount">
     <select name="transaction" id="money">
         <option value="">Select Transaction Type</option>
@@ -17,7 +77,7 @@
     <br>
     <p *ngIf="completedTransaction">Your Transaction is complete!</p>
 </section>
-
+-->
 <section>
     <h2>Saved Contacts</h2>
     <div *ngFor="let contact of contacts; index as i">

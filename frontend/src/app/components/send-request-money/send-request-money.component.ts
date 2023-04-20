@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-send-request-money',
@@ -28,5 +30,8 @@ export class SendRequestMoneyComponent implements OnInit {
   ngOnInit(): void {
   
   }
+
+  myControl = new FormControl('');
+  options1: String[] = ['Send Amount', 'Request Amount', 'Add To Wallet'];
 
 }

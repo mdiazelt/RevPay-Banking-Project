@@ -1,0 +1,44 @@
+section {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 600;
+    font-size: 2em;
+}
+  
+.container {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+.right-align {
+    text-align: right;
+}
+  
+  
+  input.right-align {
+    -moz-appearance: textfield;
+  }
+
+.form {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+
+button {
+    margin: 10px;
+}
+.header {
+    text-align: center;
+    margin: auto;
+}
+
+.amount {
+    display: inline;
+}

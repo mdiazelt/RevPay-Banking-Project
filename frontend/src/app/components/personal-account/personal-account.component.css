@@ -10,6 +10,31 @@
     margin-left:10px;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+}
+
 .form-container{
     margin: 100px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 5%;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 600;
+    font-size: 2em;
+}
+
+.header {
+    text-align: center;
+}
+
+a {
+    padding: 30px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 600;
+
 }
