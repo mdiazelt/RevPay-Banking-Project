@@ -11,9 +11,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIdentityInfo(
-  generator = ObjectIdGenerators.PropertyGenerator.class, 
-  property = "id")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Account {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,4 +34,8 @@ public class Account {
 	@OneToMany(fetch = FetchType.EAGER)
 	//@JsonBackReference(value = "transactions")
 	private List<Transaction> transactions;
+	@OneToMany(fetch = FetchType.EAGER)
+	private List<Card> cards;
+	@OneToOne(fetch = FetchType.EAGER)
+	private List<Loan> loans;
 }
