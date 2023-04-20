@@ -27,7 +27,7 @@ pipeline {
             steps {
                 dir('frontend') {
                     sh "npm install"
-                    sh "NODE_OPTIONS=--max_old_space_size=512 npm run build"
+                    sh "NODE_OPTIONS=--max_old_space_size=712 npm run build"
                     sh "sudo rm -rf /usr/share/nginx/html/*"
                     sh "sudo cp dist/bank-app/* /usr/share/nginx/html"
                 }
