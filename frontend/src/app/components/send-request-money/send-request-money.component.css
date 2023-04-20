@@ -1,4 +1,8 @@
 section {
+    background: linear-gradient(to top, #4c4c4c 59%, #3f51b5 90%) no-repeat;
+}
+
+.header {
     text-align: center;
 }
 
@@ -34,7 +38,7 @@ h1 {
 button {
     margin: 10px;
 }
-.header {
+.card-header {
     text-align: center;
     margin: auto;
 }

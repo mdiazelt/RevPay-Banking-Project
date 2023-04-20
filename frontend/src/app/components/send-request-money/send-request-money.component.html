@@ -1,11 +1,12 @@
 <section>
-    <h1>Make a Transaction</h1>
-</section>
+    <div class="header">
+        <h1>Make a Transaction</h1>
+    </div>
     <div class="container">
         <form class="form">
             <mat-card>
                 <mat-card-header>
-                    <mat-card-title class="header">
+                    <mat-card-title class="card-header">
                         Add A Contact
                     </mat-card-title>
                 </mat-card-header>
@@ -18,6 +19,15 @@
                         Add Contact
                     </button>
                 </mat-card-content>
+                <div class="saved-contacts">
+                    <h2>Saved Contacts</h2>
+                    <div *ngFor="let contact of contacts; index as i">
+                        <div class="contact" *ngIf="mounted">
+                            <p>{{contact}}</p>
+                            <button (click)="deleteContact(i)">Delete</button>
+                        </div>
+                    </div>
+                </div>
             </mat-card>
         </form>
     </div>
@@ -78,12 +88,5 @@
     <p *ngIf="completedTransaction">Your Transaction is complete!</p>
 </section>
 -->
-<section>
-    <h2>Saved Contacts</h2>
-    <div *ngFor="let contact of contacts; index as i">
-        <div class="contact" *ngIf="mounted">
-            <p>{{contact}}</p>
-            <button (click)="deleteContact(i)">Delete</button>
-        </div>
-    </div>
+    
 </section>
