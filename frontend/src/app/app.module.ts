@@ -25,8 +25,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { RegisterComponent } from './service/register/register.component';
-import { LoginComponent } from './service/login/login.component';
 
 @NgModule({
   declarations: [
@@ -39,9 +37,7 @@ import { LoginComponent } from './service/login/login.component';
     PersonalTransactionListComponent,
     RegisterAccountComponent,
     LoginAccountComponent,
-    BusinessInvoicesComponent,
-    RegisterComponent,
-    LoginComponent
+    BusinessInvoicesComponent
   ],
   imports: [
     BrowserModule,
