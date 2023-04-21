@@ -23,12 +23,12 @@ export class RegisterAccountComponent implements OnInit {
     form.reset();
     this.user = {
       username:'',
-      password:'',
+      passwd:'',
       email_address:'',
       first_name:'',
       last_name:'',
-      type_of_account:'',
       phone:'',
+      roles:[]
     }
   }
 }
