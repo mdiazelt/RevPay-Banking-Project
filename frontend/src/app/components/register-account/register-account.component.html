@@ -10,35 +10,35 @@
                 <div class="row">
                     <div class="input-field">
                         <label for="username" id="username-label">This username will become your RevPay ID</label>
-                        <input type="text" name="username" id="username" placeholder="username">
+                        <input [(ngModel)] = "username" type="text" name="username" id="username" placeholder="username">
                     </div>
                     <div class="input-field">
                         <label for="password" id="password-label">Your password must be 8 or more characters</label>
-                        <input type="password" name="password" id="password" placeholder="password">
+                        <input [(ngModel)] = "password" type="password" name="password" id="password" placeholder="password">
                         <!-- <span class="eyeicon"><i class="fa fa-eye"></i></span> -->
                     </div>
                     <div class="input-field">
 
-                        <input type="text" name="first_name" id="first_name" placeholder="first name">
+                        <input [(ngModel)] = "first_name" type="text" name="first_name" id="first_name" placeholder="first name">
                     </div>
                     <div class="input-field">
 
-                        <input type="text" name="last_name" id="last_name" placeholder="last name">
+                        <input [(ngModel)] = "last_name" type="text" name="last_name" id="last_name" placeholder="last name">
                     </div>
                     <div class="input-field">
                         <label for="email"></label>
-                        <input type="text" name="email" id="email" autocapitalize="none" autocomplete="email"
+                        <input [(ngModel)] = "email_address" type="text" name="email" id="email" autocapitalize="none" autocomplete="email"
                             placeholder="Email address">
 
 
                     </div>
                     <div class="input-field">
-                        <input type="text" name="phone" id="phone" placeholder="phone number">
+                        <input [(ngModel)] = "phone" type="text" name="phone" id="phone" placeholder="phone number">
                     </div>
                     <div class="input-field">
                         <label for="account_type" id="account-type-label">Please choose the type of account you wish to
                             setup</label>
-                        <select name="account_type" id="account-type-field">
+                        <select [(ngModel)] = "type_of_account" name="account_type" id="account-type-field">
                             <option value="blank"></option>
                             <option value="personal">Personal</option>
                             <option value="business">Business</option>
@@ -49,7 +49,7 @@
         </div>
     </div>
     <div class="button-field">
-        <button mat-raised-button color="warn" id="register-button">Register</button>
+        <button (click)="register()" mat-raised-button color="warn" id="register-button">Register</button>
     </div>
     <div class="link-field">
         <header>
