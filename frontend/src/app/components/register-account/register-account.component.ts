@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user.model';
+
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 @Component({
@@ -8,7 +8,6 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./register-account.component.css']
 })
 export class RegisterAccountComponent implements OnInit {
-  user:User;
   constructor(private router:Router) { }
 
   ngOnInit() {
@@ -21,14 +20,5 @@ export class RegisterAccountComponent implements OnInit {
   resetForm(form?:NgForm){
     if(form!=null)
     form.reset();
-    this.user = {
-      username:'',
-      passwd:'',
-      email_address:'',
-      first_name:'',
-      last_name:'',
-      phone:'',
-      roles:[]
-    }
   }
 }
