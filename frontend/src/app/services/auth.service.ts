@@ -20,7 +20,9 @@ export class AuthService {
     balance: 0,
     email: '',
     phone: '',
-    role: ''
+    role: '',
+    first_name: '',
+    last_name: ''
   }
   constructor(private http: HttpClient, private router: Router) { }
   accInfo: any
