@@ -5,24 +5,25 @@
         </header>
         <div class="forms">
             <div class="form-cell-wrapper form-textbox">
-                <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+                <!-- <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"> -->
+                    <form (ngSubmit)="onSubmit()">
                     <div class="input-fields">
-                        <input [(ngModel)]="form.username" name="username" type="text" id="username" required
-                            #username="ngModel" placeholder="">
+                        <input [(ngModel)]="username" name="username" type="text" id="username" required
+                             placeholder="">
                         <span id="revPayID_field_label">username</span>
                     </div>
 
                     <div class="input-fields2">
-                        <input [(ngModel)]="form.password" name="password" type="password" id="password" required
-                            #password="ngModel" placeholder="">
+                        <input [(ngModel)]="password" name="password" type="password" id="password" required
+                             placeholder="">
                         <span for="password" id="revPayID_field_label">password</span>
                     </div>
                     <div class="button-submit">
                         <button mat-raised-button color="warn" id="button-submit">Submit</button>
                     </div>
-                    <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
+                    <!-- <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
                         Login failed: {{ errorMessage }}
-                    </div>
+                    </div> -->
                 </form>
                 <!-- <div class="alert alert-success" *ngIf="isLoggedIn">
                     Logged in as {{ roles }}.

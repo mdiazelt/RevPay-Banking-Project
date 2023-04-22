@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { User } from 'src/app/models/user.model';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -9,20 +10,44 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login-account.component.css']
 })
 export class LoginAccountComponent implements OnInit {
-  form: any = {
-    username: null,
-    password: null
-  };
+  form: any = {};
   isLoggedIn = false;
   isLoginFailed = false;
+  username = '';
+  password = '';
   errorMessage = '';
-  roles: string[] = [];
-  username: string = '';
-  password: string = '';
+
 
   constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {}
+
+  onSubmit(): void {
+    let user:User = {
+      id: 0,
+      username:this.username,
+      passwd:this.password,
+      balance: 0,
+      email: '',
+      phone: '',
+      role: ''
+    }
+    this.authService.login(user).subscribe({
+      next: (loginUser:any) => {
+        console.log(loginUser);
+        this.authService.accInfo = loginUser;
+        this.authService.loggedIn = true;
+        this.router.navigate(['/']);
+      },
+      error: (error) => {
+        if (error.status === 401) {
+          this.errorMessage = "Invalid email or password. Please try again."
+        }
+      }
+    });
+  }
+  
+}
 
   // onSubmit(): void {
   //   const user: User = {
@@ -76,8 +101,4 @@ export class LoginAccountComponent implements OnInit {
   //     }
   //   });    
   // }
-  onSubmit(): void {
-    const { username, password } = this.form;
-  this.authService.onLogin(username, password);
-  }
-}
+
