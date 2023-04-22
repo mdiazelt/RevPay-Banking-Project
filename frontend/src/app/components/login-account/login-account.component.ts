@@ -25,12 +25,14 @@ export class LoginAccountComponent implements OnInit {
   onSubmit(): void {
     let user:User = {
       id: 0,
-      username:this.username,
-      passwd:this.password,
+      username: this.username,
+      passwd: this.password,
       balance: 0,
       email: '',
       phone: '',
-      role: ''
+      role: '',
+      first_name: '',
+      last_name: '',
     }
     this.authService.login(user).subscribe({
       next: (loginUser:any) => {
