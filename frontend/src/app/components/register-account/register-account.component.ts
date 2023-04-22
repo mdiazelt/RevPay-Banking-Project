@@ -12,7 +12,7 @@ import { RegisterService } from 'src/app/services/register.service';
 export class RegisterAccountComponent implements OnInit {
   user:User;
   username:string = "";
-  password:string = "";
+  passwd:string = "";
   first_name:string = "";
   last_name:string = "";
   email_address:string = "";
@@ -27,15 +27,16 @@ export class RegisterAccountComponent implements OnInit {
   register() : void {
     let user : User = {
       username:this.username,
-      password:this.password,
+      passwd:this.passwd,
       first_name:this.first_name,
       last_name:this.last_name,
       email_address:this.email_address,
       phone:this.phone,
       type_of_account:this.type_of_account
     };
-    this.registerService.registerBusiness(user).subscribe();
-    this.registerService.registerPersonal(user).subscribe();
+    if (this.type_of_account == "Personal"){
+      this.registerService.registerPersonal(user).subscribe();
+    } else this.registerService.registerBusiness(user).subscribe();
   }
 
   onSubmit(){
@@ -46,7 +47,7 @@ export class RegisterAccountComponent implements OnInit {
     form.reset();
     this.user = {
       username:'',
-      password:'',
+      passwd:'',
       email_address:'',
       first_name:'',
       last_name:'',

@@ -36,6 +36,6 @@ public class Account {
 	private List<Transaction> transactions;
 	@OneToMany(fetch = FetchType.EAGER)
 	private List<Card> cards;
-	@OneToOne(fetch = FetchType.EAGER)
+	@OneToMany(fetch = FetchType.EAGER)
 	private List<Loan> loans;
 }
