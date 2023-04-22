@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user.model';
+
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { RegisterService } from 'src/app/services/register.service';
@@ -10,6 +10,7 @@ import { RegisterService } from 'src/app/services/register.service';
   styleUrls: ['./register-account.component.css']
 })
 export class RegisterAccountComponent implements OnInit {
+
   user:User;
   username:string = "";
   passwd:string = "";
@@ -17,8 +18,9 @@ export class RegisterAccountComponent implements OnInit {
   last_name:string = "";
   email_address:string = "";
   phone:string = "";
-  type_of_account:string = "";
+  role:string = "";
   constructor(private router:Router, private registerService : RegisterService) { }
+
 
   ngOnInit() {
     this.resetForm();
@@ -45,14 +47,16 @@ export class RegisterAccountComponent implements OnInit {
   resetForm(form?:NgForm){
     if(form!=null)
     form.reset();
+
     this.user = {
       username:'',
       passwd:'',
       email_address:'',
       first_name:'',
       last_name:'',
-      type_of_account:'',
+      role:'',
       phone:'',
     }
+
   }
 }

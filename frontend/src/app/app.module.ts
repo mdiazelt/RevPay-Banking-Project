@@ -27,7 +27,6 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     PersonalTransactionListComponent,
     RegisterAccountComponent,
     LoginAccountComponent,
-    BusinessInvoicesComponent
+    BusinessInvoicesComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +61,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatRadioModule,
     MatAutocompleteModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
