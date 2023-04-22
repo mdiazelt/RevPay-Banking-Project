@@ -1,10 +1,10 @@
 export interface User {
+    id:number
     username:string,
     passwd:string,
-    first_name:string,
-    last_name:string,
-    email_address:string,
+    balance: number
+    email:string,
     phone:string,
-    roles:string[];
+    role:string
 
 }
