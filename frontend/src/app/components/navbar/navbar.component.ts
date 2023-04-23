@@ -8,11 +8,21 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
+  currentUserRole: string | null;
+
   constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
+
   }
   get loggedIn() {
     return this.authService.loggedIn;
+  }
+  get showPersonalAccountLink() {
+    return this.loggedIn && this.currentUserRole === 'personal';
+  }
+
+  get showBusinessAccountLink() {
+    return this.loggedIn && this.currentUserRole === 'business';
   }
 }
