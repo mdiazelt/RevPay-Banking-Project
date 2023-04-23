@@ -8,7 +8,6 @@ import { BusinessAccountComponent } from './components/business-account/business
 import { RegisterAccountComponent } from './components/register-account/register-account.component';
 import { LoginAccountComponent } from './components/login-account/login-account.component';
 import { BusinessInvoicesComponent } from './components/business-invoices/business-invoices.component';
-
 const routes: Routes = [
 
   {path: 'personal', component: PersonalAccountComponent},
@@ -16,9 +15,9 @@ const routes: Routes = [
   {path: 'business', component:BusinessAccountComponent},
   {path: 'register',component:RegisterAccountComponent},
   {path:'', redirectTo:'/login', pathMatch:'full'},
-  {path:'login',component:LoginAccountComponent},
 
   {path:'login',children:[
+    {path:'',component:LoginAccountComponent},
     {path:'register',component:RegisterAccountComponent
   }
   ]},
