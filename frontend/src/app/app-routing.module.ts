@@ -9,7 +9,7 @@ import { RegisterAccountComponent } from './components/register-account/register
 import { LoginAccountComponent } from './components/login-account/login-account.component';
 import { BusinessInvoicesComponent } from './components/business-invoices/business-invoices.component';
 const routes: Routes = [
-
+  
   {path: 'personal', component: PersonalAccountComponent},
   {path: 'money', component: SendRequestMoneyComponent},
   {path: 'business', component:BusinessAccountComponent},
@@ -18,28 +18,16 @@ const routes: Routes = [
 
   {path:'login',children:[
     {path:'',component:LoginAccountComponent},
-    {path:'register',component:RegisterAccountComponent
-  }
-  ]},
-  {path:'register',children:[
-    {path:'login',component:LoginAccountComponent
-  }
-  ]},
+    {path:'register',component:RegisterAccountComponent}]},
+
   {path:'personal', children:[
-    {path:'transaction-history', 
-    component:PersonalTransactionListComponent
-  },
-    {
-      path:'wallet', 
-      component:PersonalWalletComponent
-    }
-    ],
-  },
+    { path: '', component: PersonalAccountComponent },
+    {path:'transaction-history', component:PersonalTransactionListComponent},
+    {path:'wallet', component:PersonalWalletComponent}]},
+
   {path:'business', children:[
-    {path:'send-invoices', component:BusinessInvoicesComponent
-  },
-  ]}
-];
+    { path: '', component: BusinessAccountComponent },
+    {path:'send-invoices', component:BusinessInvoicesComponent}]}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
