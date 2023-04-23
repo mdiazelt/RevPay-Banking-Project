@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { User } from 'src/app/models/user.model';
@@ -10,11 +11,14 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login-account.component.css']
 })
 export class LoginAccountComponent implements OnInit {
-  form: any = {};
-  isLoggedIn = false;
+  // form = new FormGroup({
+  //   username: new FormControl(null, Validators.required),
+  //   password: new FormControl(null,Validators.required),
+  // });
   isLoginFailed = false;
   username = '';
   password = '';
+  role='';
   errorMessage = '';
 
 
@@ -30,21 +34,37 @@ export class LoginAccountComponent implements OnInit {
       balance: 0,
       email: '',
       phone: '',
-      role: '',
-      first_name: '',
+      role:this.role,
+      first_name: '', 
       last_name: '',
     }
+    // if(this.form.invalid){
+    //   return;
+    // }
     this.authService.login(user).subscribe({
       next: (loginUser:any) => {
         console.log(loginUser);
         this.authService.accInfo = loginUser;
+        this.isLoginFailed = false;
         this.authService.loggedIn = true;
-        this.router.navigate(['/']);
-      },
-      error: (error) => {
-        if (error.status === 401) {
-          this.errorMessage = "Invalid email or password. Please try again."
+  
+        // Check the loginUser.role value
+        console.log('loginUser.role:', loginUser.role);
+  
+        // Navigate to PersonalAccountComponent directly
+        if (loginUser.role === 'personal') {
+          this.router.navigateByUrl('/personal');
         }
+  
+        // Navigate to BusinessAccountComponent directly
+        if (loginUser.role === 'business') {
+          this.router.navigateByUrl('/business');
+        }
+
+      },
+      error: err => {
+        this.isLoginFailed  = true;
+        this.errorMessage = err.message;
       }
     });
   }
