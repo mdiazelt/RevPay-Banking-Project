@@ -1,10 +1,10 @@
 <mat-toolbar color="primary" class="mat-elevation-z6">
     <mat-icon>account_balance</mat-icon>
     <span>RevPay</span>
-        <div class="spacer"></div>
-    <a routerLink="personal" mat-button>Personal Account</a>
-    <a routerLink="business" mat-button>Business Account</a>
-    <a routerLink="money" mat-button>Send/Request Money</a>
-    <a routerLink="register" mat-button>Register</a>
-    <a routerLink="login" mat-button>Login</a>
+    <div class="spacer"></div>
+    <div *ngIf="loggedIn">
+        <a routerLink="personal" mat-button>Personal Account</a>
+        <a routerLink="business" mat-button>Business Account</a>
+        <a routerLink="money" mat-button>Send/Request Money</a>
+    </div>
 </mat-toolbar>
