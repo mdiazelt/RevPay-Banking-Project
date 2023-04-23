@@ -26,6 +26,8 @@ public class Account {
 	protected String email;
 	@Column
 	protected String phone;
+	@Column
+	protected String role;
 	/*
 	@Column
 	@JsonFormat(shape = JsonFormat.Shape.STRING)
