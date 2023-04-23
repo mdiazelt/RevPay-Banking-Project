@@ -26,7 +26,7 @@ export class AuthService {
     last_name: ''
   }
   constructor(private http: HttpClient, private router: Router) { 
-    //this.loggedIn = !!localStorage.getItem(this.tokenKey);
+
   }
   accInfo: any
   login(user: User): Observable<any> {
@@ -53,6 +53,5 @@ export class AuthService {
       })
     );
   }
-
 }
 
