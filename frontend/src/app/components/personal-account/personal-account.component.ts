@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router,ParamMap } from '@angular/router';
 import { FormBuilder, FormControl } from '@angular/forms';
-import {FloatLabelType} from '@angular/material/form-field';
+import { FloatLabelType } from '@angular/material/form-field';
+import { CardService } from 'src/app/services/card.service';
+import { Card } from 'src/app/models/card.model';
 
 @Component({
   selector: 'app-personal-account',
@@ -11,14 +13,27 @@ import {FloatLabelType} from '@angular/material/form-field';
 
 export class PersonalAccountComponent implements OnInit {
 
+  card:Card;
+  number:string = "";
+  expiration:string = "";
+  cvc:string = "";
+
   myControl = new FormControl('');
   options1: String[] = ['Checkings', 'Savings'];
 
   addCard: boolean = false;
   addBank: boolean = false;
 
-  submittedCard() {
+  constructor(private _formBuilder:FormBuilder, private route: ActivatedRoute, private router:Router, private cardService : CardService){}
+
+  submittedCard() : void {
     this.addCard = !this.addCard;
+    let card : Card = {
+      number: this.number,
+      expiration: this.expiration,
+      cvc: this.cvc
+    };
+    this.cardService.addCard(card).subscribe();
   }
 
   submittedBank() {
@@ -35,8 +50,6 @@ export class PersonalAccountComponent implements OnInit {
     hideRequired: this.hideRequiredControl,
     floatLabel: this.floatLabelControl,
   });
-
-  constructor(private _formBuilder:FormBuilder, private route: ActivatedRoute, private router:Router){}
 
   getFloatLabelValue(): FloatLabelType {
     return this.floatLabelControl.value || 'auto';
