@@ -16,6 +16,7 @@ public class Loan {
 	private Long id;
 	
 	@Column
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date date;
 	@Column
 	private double principal;
