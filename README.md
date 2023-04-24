@@ -27,11 +27,11 @@ node.js
 - Run the file AppApplication, enter file path of front-end, npm install, ng serve
 ___
 ## Documentation/Useful Links
-https://docs.aws.amazon.com/
-https://www.jenkins.io/doc/book/installing/
-https://aws.amazon.com/rds/
-https://angular.io/docs
-https://spring.io/
+- https://docs.aws.amazon.com/
+- https://www.jenkins.io/doc/book/installing/
+- https://aws.amazon.com/rds/
+- https://angular.io/docs
+- https://spring.io/
 ___
 ## Authors
 
