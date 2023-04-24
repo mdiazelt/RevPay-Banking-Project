@@ -40,4 +40,10 @@ public class Account {
 	private List<Card> cards;
 	@OneToMany(fetch = FetchType.EAGER)
 	private List<Loan> loans;
+
+	public boolean updateBalance(double amount) {
+		boolean p = amount > 0 || balance + amount >= 0;
+		balance += p ? amount : 0;
+		return p;
+	}
 }
