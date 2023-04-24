@@ -25,13 +25,6 @@ public class TransactionService {
 		if (!aFrom.updateBalance(-amount))
 			return null;
 		aTo.updateBalance(amount);
-		/*
-		double balance = aFrom.getBalance(), amount = transaction.getAmount();
-		if (balance - amount < 0)
-			return null;
-		aFrom.setBalance(balance - amount);
-		aTo.setBalance(aTo.getBalance() + amount);
-		*/
 		transaction.setFrom(aFrom);
 		transaction.setTo(aTo);
 		return transactionRepository.save(transaction);
