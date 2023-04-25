@@ -1,5 +1,6 @@
 section {
     background: linear-gradient(to top, #4c4c4c 59%, #3f51b5 90%) no-repeat;
+    min-height: 100vh;
 }
 
 .header {
