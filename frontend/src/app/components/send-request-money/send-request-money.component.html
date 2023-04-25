@@ -69,6 +69,10 @@
                             </mat-autocomplete>
                           </mat-form-field>
                     </div>
+                    <button (click)="completeTransaction()" mat-raised-button color="primary">
+                        Complete Transaction
+                    </button>
+                    <p *ngIf="completedTransaction">Your Transaction is complete!</p>
                 </mat-card-content>
             </mat-card>
         </form>
