@@ -19,7 +19,7 @@ public class Card {
 	@Column
 	private long number;
 	@Column
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern="MM-yyyy")
 	private Date expiration;
 	@Column
 	private short cvc;

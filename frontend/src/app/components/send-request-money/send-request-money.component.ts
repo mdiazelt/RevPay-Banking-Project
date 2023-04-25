@@ -14,14 +14,26 @@ export class SendRequestMoneyComponent implements OnInit {
 
   amount: string = "";
   contacts: String[] = [];
-  contact: String = "";
+  contact: string = "";
   completedTransaction: boolean = false;
   mounted: boolean = true;
 
   constructor(private transactionsService : TransactionsService) { }
 
-  addContact() {
+  addContact() : void {
     this.contacts.push(this.contact);
+    let user : User = {
+      username: this.contact,
+      id: 0,
+      passwd: '',
+      balance: 0,
+      email: '',
+      first_name: '',
+      last_name: '',
+      phone: '',
+      role: ''
+    }
+    this.transactionsService.findUser(user).subscribe();
   }
 
   deleteContact(item: number) {
@@ -35,7 +47,7 @@ export class SendRequestMoneyComponent implements OnInit {
     }
     let user : User = {
       id: 0,
-      username: '',
+      username: this.contact,
       passwd: '',
       balance: 0,
       email: '',
