@@ -29,4 +29,9 @@ public class Transaction {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "account_to", nullable = true)
 	private Account to;
+
+	@PrePersist
+	private void onCreate() {
+		transaction_time = new Date();
+	}
 }
