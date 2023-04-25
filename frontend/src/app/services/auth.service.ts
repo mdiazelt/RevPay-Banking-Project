@@ -11,7 +11,7 @@ const AUTH_API = "http://localhost:9000/";
 })
 export class AuthService {
 
-  private tokenKey = 'auth_token';
+  private tokenKey = 'userId';
   loggedIn: boolean = false;
 
 
@@ -40,8 +40,10 @@ export class AuthService {
           throw new Error(`You are not logged in as a ${user.role} account.`);
         }
         this.accInfo = loginUser;
-        localStorage.setItem(this.tokenKey, JSON.stringify(loginUser));
+        localStorage.setItem(this.tokenKey, loginUser.id.toString());
         this.loggedIn = true;
+        console.log('User logged in:', this.loggedIn);
+        console.log('User ID:', localStorage.getItem(this.tokenKey)); 
         if (loginUser.hasOwnProperty('role') && loginUser.role === 'personal') {
           this.router.navigate(['/personal'], { queryParams: { role: loginUser.role } });
         } else if (loginUser.hasOwnProperty('role') && loginUser.role === 'business') {

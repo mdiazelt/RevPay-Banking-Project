@@ -36,19 +36,20 @@
             <div class="credit_info_text">
                 <div class="container-fields">
                     <mat-card class="card-template">
-                        <form>
+                        <form [formGroup]="cardForm" (ngSubmit)="saveCard()">
                             <div class="input-fields">
-                                <mat-form-field class="mat-fields" appearance="fill">
+                                <!-- <mat-form-field class="mat-fields" appearance="fill">
                                     <mat-label for="credit_name">Enter your full name</mat-label>
-                                    <input class="input-texts" matInput type="text" name="text" id="credit_name">
-                                </mat-form-field>
+                                    <input class="input-texts" matInput type="text" name="text" id="credit_name"
+                                        >
+                                </mat-form-field> -->
                             </div>
 
                             <div class="input-fields">
                                 <mat-form-field class="mat-fields" appearance="fill">
                                     <mat-label for="credit_number">Enter credit card number</mat-label>
                                     <input class="input-texts" matInput type="text" id="credit_number" maxlength="16"
-                                        (keypress)="numbersOnly($event)">
+                                        (keypress)="numbersOnly($event)" formControlName="number">
                                 </mat-form-field>
                             </div>
 
@@ -56,14 +57,15 @@
                                 <mat-form-field class="mat-fields" appearance="fill">
                                     <mat-label for="pwd">Enter credit card Security </mat-label>
                                     <input class="input-texts" matInput type="password" name="pwd" id="pwd"
-                                        maxlength="3" pattern="\d{3}" (keypress)="numbersOnly($event)">
+                                        maxlength="3" pattern="\d{3}" (keypress)="numbersOnly($event)"
+                                        formControlName="cvc">
                                 </mat-form-field>
                             </div>
 
                             <div class="expirary_date">
-                                <mat-form-field class="mat-fields" appearance="fill">
+                                <!-- <mat-form-field class="mat-fields" appearance="fill">
                                     <mat-label>Month</mat-label>
-                                    <mat-select class="input-texts" name='expireMM' id='expireMM'>
+                                    <mat-select class="input-texts" name='expireMM' id='expireMM'formControlName="expirationYear">
                                         <mat-option value='01'>January</mat-option>
                                         <mat-option value='02'>February</mat-option>
                                         <mat-option value='03'>March</mat-option>
@@ -80,20 +82,20 @@
                                 </mat-form-field>
                                 <mat-form-field class="mat-fields" appearance="fill">
                                     <mat-label value=''>Year</mat-label>
-                                    <mat-select class="input-texts" name='expireYY' id='expireYY'>
-                                        <mat-option value='23'>2023</mat-option>
-                                        <mat-option value='24'>2024</mat-option>
-                                        <mat-option value='25'>2025</mat-option>
-                                        <mat-option value='26'>2026</mat-option>
-                                        <mat-option value='27'>2027</mat-option>
-                                        <mat-option value='28'>2028</mat-option>
-                                        <mat-option value='29'>2029</mat-option>
+                                    <mat-select class="input-texts" name='expireYY' id='expireYY'formControlName="expirationYear">
+                                        <mat-option value='2023'>2023</mat-option>
+                                        <mat-option value='2024'>2024</mat-option>
+                                        <mat-option value='2025'>2025</mat-option>
+                                        <mat-option value='2026'>2026</mat-option>
+                                        <mat-option value='2027'>2027</mat-option>
+                                        <mat-option value='2028'>2028</mat-option>
+                                        <mat-option value='2029'>2029</mat-option>
                                     </mat-select>
-                                </mat-form-field>
+                                </mat-form-field> -->
 
                                 <div class="input-expirary-fields">
                                     <div>
-                                        <label for="inputCard">Or enter manually</label>
+                                        <!-- <label for="inputCard">Or enter manually</label> -->
                                     </div>
 
                                     <div class="input-fields">
@@ -101,7 +103,7 @@
                                             <mat-label>Month</mat-label>
                                             <input class="input-texts" matInput type="text" name="expiry" id="expiry"
                                                 maxlength="2" pattern="(0[1-9]|1[0-2])"
-                                                (keypress)="numbersOnly($event)" />
+                                                (keypress)="numbersOnly($event)" formControlName="expirationMonth"/>
                                         </mat-form-field>
                                     </div>
 
@@ -110,7 +112,7 @@
                                         <mat-form-field class="mat-fields" appearance="fill">
                                             <mat-label>Year</mat-label>
                                             <input class="input-texts" matInput type="text" name="expiry" id="expiry"
-                                                maxlength="2" (keypress)="numbersOnly($event)" />
+                                                maxlength="4" (keypress)="numbersOnly($event)" formControlName="expirationYear"/>
                                         </mat-form-field>
                                     </div>
 
@@ -122,7 +124,7 @@
                         </form>
                     </mat-card>
                 </div>
-            </div>
+            </div>     
         </div>
     </main>
 </body>

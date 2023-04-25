@@ -71,6 +71,7 @@
             "development": {
               "browserTarget": "bank-app:build:development",
               "proxyConfig": "src/proxy.conf.json"
+
             }
           },
           "defaultConfiguration": "development"
