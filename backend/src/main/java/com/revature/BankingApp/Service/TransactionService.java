@@ -21,11 +21,10 @@ public class TransactionService {
 
 	public Transaction send(Transaction transaction, long from, long to) {
 		Account aFrom = accountRepository.findById(from).get(), aTo = accountRepository.findById(to).get();
-		double balance = aFrom.getBalance(), amount = transaction.getAmount();
-		if (balance - amount < 0)
+		double amount = transaction.getAmount();
+		if (!aFrom.updateBalance(-amount))
 			return null;
-		aFrom.setBalance(balance - amount);
-		aTo.setBalance(aTo.getBalance() + amount);
+		aTo.updateBalance(amount);
 		transaction.setFrom(aFrom);
 		transaction.setTo(aTo);
 		return transactionRepository.save(transaction);

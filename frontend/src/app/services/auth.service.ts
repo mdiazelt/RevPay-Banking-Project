@@ -5,7 +5,7 @@ import { Observable, catchError, tap, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 
 
-const AUTH_API = "http://localhost:9000/"
+const AUTH_API = "/api"
 @Injectable({
   providedIn: 'root'
 })
@@ -33,7 +33,7 @@ export class AuthService {
     let header: HttpHeaders = new HttpHeaders();
     header.append("accept", "text/json");
     header.append("Access-Control-Allow-Origin", "*");
-    return this.http.post(AUTH_API + 'login', user, { headers: header }).pipe(
+    return this.http.post(AUTH_API + '/login', user, { headers: header }).pipe(
       tap((loginUser: any) => {
         // Check if the role matches the selected role
         if (loginUser.hasOwnProperty('role') && loginUser.role !== user.role) {

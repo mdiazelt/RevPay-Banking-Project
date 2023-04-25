@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import java.util.List;
 
-public interface RequestRepository extends JpaRepository<Request, Long> {
-    @Query(value = "SELECT * FROM \"request\" WHERE \"account_from\" = :id OR \"account_to\" = :id", nativeQuery = true)
-    List<Request> findByFromOrTo(@Param("id") long id);
+public interface InvoiceRepository extends JpaRepository<Invoice, Long> {
+    @Query(value = "SELECT * FROM \"invoice\" WHERE \"account_from\" = :id OR \"account_to\" = :id", nativeQuery = true)
+    List<Invoice> findByFromOrTo(@Param("id") long id);
 }

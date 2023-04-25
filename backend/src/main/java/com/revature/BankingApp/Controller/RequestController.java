@@ -15,21 +15,21 @@ import java.util.List;
 
 @RestController
 @CrossOrigin("*")
-public class TransactionController {
-	TransactionService transactionService;
+public class RequestController {
+	RequestService requestService;
 
 	@Autowired
-	public TransactionController(TransactionService transactionService) {
-		this.transactionService = transactionService;
+	public RequestController(RequestService requestService) {
+		this.requestService = requestService;
 	}
 
-	@PostMapping(value = "send", params = {"from", "to"})
-	public Transaction login(@RequestBody Transaction transaction, @RequestParam("from") long from, @RequestParam("to") long to) {
-		return transactionService.send(transaction, from, to);
+	@PostMapping(value = "request", params = {"from", "to"})
+	public Request request(@RequestBody Request request, @RequestParam("from") long from, @RequestParam("to") long to) {
+		return requestService.request(request, from, to);
 	}
 
-	@GetMapping("transactions/{id}")
-	public List<Transaction> getTransactions(@PathVariable long id) {
-		return transactionService.getTransactions(id);
+	@GetMapping("requests/{id}")
+	public List<Request> getRequests(@PathVariable long id) {
+		return requestService.getRequests(id);
 	}
 }

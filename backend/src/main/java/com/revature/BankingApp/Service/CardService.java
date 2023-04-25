@@ -17,4 +17,10 @@ public class CardService {
 		this.cardRepository = cardRepository;
 		this.accountRepository = accountRepository;
 	}
+
+	public Card addCard(Card card, long accountId) {
+		Account a = accountRepository.findById(accountId).get();
+		card.setAccount(a);
+		return cardRepository.save(card);
+	}
 }
