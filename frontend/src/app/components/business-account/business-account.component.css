@@ -25,7 +25,6 @@ body{
   overflow-y: scroll;
   overflow-y: hidden;
   color: black;
-  height: 100vh;
   background: linear-gradient(to top, #4c4c4c 59%, #3f51b5 90%) no-repeat;
   margin: 0;
   padding: 0;
@@ -88,8 +87,8 @@ mat-label{
 }
 
 .container-fields{
-  min-width:28em;
-  height: 35em;
+  min-width:26em;
+  height: 21em;
   box-shadow: 10px 10px 65px rgb(8, 8, 8);
   border-radius: 12px;
   margin-top: 75px;
@@ -101,8 +100,5 @@ mat-label{
   text-align: center;
 }
 .input-texts{
-  color: wheat;
-}
-mat-select{
   color: wheat;
 }
