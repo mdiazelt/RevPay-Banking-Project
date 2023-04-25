@@ -70,6 +70,8 @@
             },
             "development": {
               "browserTarget": "bank-app:build:development"
+              
+              
             }
           },
           "defaultConfiguration": "development"
