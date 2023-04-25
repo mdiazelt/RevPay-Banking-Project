@@ -28,4 +28,9 @@ public class Request {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "account_to", nullable = true)
 	private Account to;
+
+	@PrePersist
+	private void onCreate() {
+		request_time = new Date();
+	}
 }

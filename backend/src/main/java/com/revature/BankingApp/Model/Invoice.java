@@ -32,4 +32,9 @@ public class Invoice {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "account_to", nullable = true)
 	private Account to;
+
+	@PrePersist
+	private void onCreate() {
+		invoice_date = new Date();
+	}
 }
