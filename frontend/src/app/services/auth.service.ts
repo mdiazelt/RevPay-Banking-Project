@@ -5,7 +5,7 @@ import { Observable, catchError, tap, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 
 
-const AUTH_API = "/api"
+const AUTH_API = "http://localhost:9000/";
 @Injectable({
   providedIn: 'root'
 })
