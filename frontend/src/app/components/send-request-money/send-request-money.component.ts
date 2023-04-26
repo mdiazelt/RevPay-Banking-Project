@@ -30,7 +30,7 @@ export class SendRequestMoneyComponent implements OnInit {
       username: this.contact,
       id: 0,
       passwd: '',
-      balance: 0,
+      balance: 500,
       email: '',
       first_name: '',
       last_name: '',
@@ -45,7 +45,6 @@ export class SendRequestMoneyComponent implements OnInit {
   }
 
   completeTransaction() : void{
-    
     this.completedTransaction = !this.completedTransaction;
     let transactions : Transactions = {
       amount:this.amount

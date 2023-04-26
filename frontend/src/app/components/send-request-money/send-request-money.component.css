@@ -25,9 +25,8 @@ h1 {
 .right-align {
     text-align: right;
 }
-  
-  
-  input.right-align {
+
+input.right-align {
     -moz-appearance: textfield;
   }
 
