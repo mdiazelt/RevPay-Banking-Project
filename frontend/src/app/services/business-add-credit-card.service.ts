@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Card } from '../models/card';
 import { User } from '../models/user.model';
 
-const AUTH_API = "http://localhost:9000/";
+const AUTH_API = "/api";
 @Injectable({
   providedIn: 'root'
 })

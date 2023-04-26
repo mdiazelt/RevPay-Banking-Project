@@ -1,0 +1,19 @@
+.transaction_history {
+    border-style: inset;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 5%;
+    padding: 5%;
+    padding-left: 15%;
+}
+
+h1 {
+    padding-top: 5%;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 600;
+    font-size: 2em;
+}
+
+.backAccounts {
+    margin-top: 10%;
+}

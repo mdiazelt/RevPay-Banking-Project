@@ -1,36 +1,36 @@
-<h1>Wallet</h1>
-<div class = "balance_header">
-<header class ="card_header">
-    <h3>
-        RevPay balance
-    </h3>
-</header>
-</div>
-<div class = "card_content_for_amount">
-    <div class="amount_balance">
-        <h2>
-            $600
-        </h2>
+<div class="wallet">
+    <h1>My Wallet</h1>
+    <div class="balance_header">
+        <header class="card_header">
+            <h3>RevPay balance</h3>
+        </header>
     </div>
-        <p class="available_amount_text">
+    <div class="card_content_for_amount">
+        <div class="amount_balance">
+            <p>
+                <mat-form-field appearance="fill">
+                  <mat-label>$600.00 Available</mat-label>
+                  <input matInput placeholder="Placeholder">
+
+                </mat-form-field>
+              </p>
+            
+        </div>
+        <!--<p class="available_amount_text">
             Available
-        </p>
-</div>
+        </p>-->
+        </div>
 
-<div class = "creditCards">
-    <h3>Credit cards</h3>
+    <!--<div class="creditCards">
+        <h3> My Cards</h3>
+        <ul>
+            <li>Card 1</li>
+            <li>Card 2</li>
+        </ul> 
+    </div>-->
 
-    <ul>
-        <li>
-            credit card 1
-        </li>
-        <li>
-            credit card 2
-        </li>
-    </ul>
-</div>
-
-<div class="child_routes">
-    <button (click)=back_button()>back to account</button>
-    <button (click)="trans_button()">Transaction history</button>
+    <div class="child_routes">
+        <button class="account_button" (click)=back_button() mat-raised-button color="primary">Back to account</button>
+        <button class="trans_button" (click)="trans_button()" mat-raised-button color="primary">Transaction history</button>
+    </div>
 </div>

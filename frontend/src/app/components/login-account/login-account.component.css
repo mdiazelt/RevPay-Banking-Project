@@ -143,3 +143,12 @@ h2 {
     letter-spacing: 0;
     position: relative;
 }
+
+.accountType {
+    padding: 5%;
+    color: white;
+    margin-right: 2%;
+}
+.alert {
+    color:white;
+}
