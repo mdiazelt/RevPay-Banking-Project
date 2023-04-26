@@ -7,7 +7,7 @@
             <mat-card>
                 <mat-card-header>
                     <mat-card-title class="card-header">
-                        Add A Contact
+                        Search Contact
                     </mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
@@ -16,7 +16,7 @@
                         <input matInput placeholder="Enter Contact" type = "text" [(ngModel)]="contact" [ngModelOptions]="{standalone: true}" #input>
                     </mat-form-field>
                     <button (click)="addContact()" mat-raised-button color="primary">
-                        Add Contact
+                        Search Contact
                     </button>
                 </mat-card-content>
                 <div class="saved-contacts">
@@ -24,7 +24,9 @@
                     <div *ngFor="let contact of contacts; index as i">
                         <div class="contact" *ngIf="mounted">
                             <p>{{contact}}</p>
-                            <button (click)="deleteContact(i)">Delete</button>
+                            <button (click)="deleteContact(i)" mat-raised-button color="primary">
+                                Delete
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -48,8 +50,7 @@
                             <mat-label>Amount</mat-label>
                             <div class="amount">
                                 <span matTextPrefix>$&nbsp;</span>
-                                <input matInput type="number" placeholder="0">
-                                
+                                <input [(ngModel)]="amount" [ngModelOptions]="{standalone: true}" #input matInput type="number" placeholder="0">
                             </div>
                         </mat-form-field>
                     </div>
@@ -61,7 +62,7 @@
                                    aria-label="Transaction Type"
                                    matInput
                                    [formControl]="myControl"
-                                   [matAutocomplete]="auto">
+                                   [matAutocomplete]="auto" [(ngModel)]="transType">
                             <mat-autocomplete #auto="matAutocomplete">
                               <mat-option *ngFor="let option of options1" [value]="option">
                                 {{option}}

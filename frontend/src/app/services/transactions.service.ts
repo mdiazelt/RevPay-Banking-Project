@@ -33,6 +33,14 @@ export class TransactionsService {
     return this.http.post<Transactions>(url, transactions, {headers: header})
   }
 
+  requestTrans(transactions : Transactions, user : User):Observable<Transactions>{
+    const url = `${AUTH_API}request?from=${user.id}&to=${user.id}`;
+    let header : HttpHeaders = new HttpHeaders();
+    header.append("accept", "text/json");
+    header.append("Access-Control-Allow-Origin","*");
+    return this.http.post<Transactions>(url, transactions, {headers: header})
+  }
+
   findUser(user : User):Observable<any>{
     const url = `${AUTH_API}findAccount?username=${user.username}`;
     let header : HttpHeaders = new HttpHeaders();

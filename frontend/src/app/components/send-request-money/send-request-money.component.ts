@@ -17,6 +17,10 @@ export class SendRequestMoneyComponent implements OnInit {
   contact: string = "";
   completedTransaction: boolean = false;
   mounted: boolean = true;
+  transType: string = "";
+
+  myControl = new FormControl('');
+  options1: string[] = ['Send Amount', 'Request Amount', 'Add To Wallet'];
 
   constructor(private transactionsService : TransactionsService) { }
 
@@ -41,6 +45,7 @@ export class SendRequestMoneyComponent implements OnInit {
   }
 
   completeTransaction() : void{
+    
     this.completedTransaction = !this.completedTransaction;
     let transactions : Transactions = {
       amount:this.amount
@@ -49,21 +54,21 @@ export class SendRequestMoneyComponent implements OnInit {
       id: 0,
       username: this.contact,
       passwd: '',
-      balance: 0,
+      balance: 500,
       email: '',
       first_name: "",
       last_name: '',
       phone: '',
       role: ''
     }
-    this.transactionsService.postTrans(transactions, user).subscribe();
+    if (this.transType == "Send Amount"){
+      this.transactionsService.postTrans(transactions, user).subscribe();
+    } else this.transactionsService.requestTrans(transactions, user).subscribe();
+    
   }
 
   ngOnInit(): void {
   
   }
-
-  myControl = new FormControl('');
-  options1: String[] = ['Send Amount', 'Request Amount', 'Add To Wallet'];
 
 }
