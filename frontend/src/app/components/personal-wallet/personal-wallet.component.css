@@ -1,0 +1,27 @@
+.wallet { 
+    border-style: outset;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 5%;
+    padding: 5%;
+    padding-left: 15%;
+}
+
+h1 {
+    padding-top: 5%;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 600;
+    font-size: 2em;
+}
+
+.account_button {
+    padding: 2%;
+    margin-right: 5%;
+}
+
+.trans_button {
+    padding: 2%;
+}
+.child_routes {
+    margin-left: 0%;
+}
