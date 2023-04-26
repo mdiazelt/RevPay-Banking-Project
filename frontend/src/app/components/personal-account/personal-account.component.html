@@ -3,6 +3,7 @@
 <!-- <div routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
 <a routerLink="/personal/personal-transaction-history">Transaction History</a>
 </div> -->
+<section>
 <div class = "header">
     <h1>My Account</h1>
     <div>  
@@ -11,7 +12,7 @@
     </div>
 </div>
 
-<section class="container">
+<div class="container">
         <form [formGroup]="cardForm" class="form-container">
             <mat-card>
                 <mat-card-header>
@@ -20,11 +21,11 @@
                     </mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
-                        <div>
+                        <!-- <div>
                             <mat-form-field class="full-width">
                                 <input formControlName="name" matInput placeholder="Full Name">
                             </mat-form-field>
-                        </div>
+                        </div> -->
                         <div>
                             <mat-form-field class="full-width">
                                 <input formControlName="number" matInput placeholder="16-Digit Card Number" (keypress)="numbersOnly($event)">
@@ -101,6 +102,7 @@
                 <p *ngIf="addBank">Bank account successfully linked!</p>
             </mat-card>
         </form>
+    </div>
 </section>
 
 <!-- <section class="card">
