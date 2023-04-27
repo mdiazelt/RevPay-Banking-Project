@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute,Router,ParamMap } from '@angular/router';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import {FloatLabelType} from '@angular/material/form-field';
 import { Card } from 'src/app/models/card';
 import { PersonalAddCreditCardService } from 'src/app/services/personal-add-credit-card.service'
 import { AuthService } from 'src/app/services/auth.service';
+import { formatDate } from '@angular/common';
+import { PersonalWalletComponent } from '../personal-wallet/personal-wallet.component';
+
 
 @Component({
   selector: 'app-personal-account',
@@ -22,17 +25,28 @@ export class PersonalAccountComponent implements OnInit {
 
   card: Card;
   userId: number;
+  id:number;
 
+  //@Output() cardCreated = new EventEmitter<Card>();
 
   savedCards: Card[] = [];
 
-  cardForm = this._formBuilder.group({
-    name:['', Validators.required, Validators.minLength(3)],
-    number:['', Validators.required, Validators.maxLength(16)],
-    date:['', Validators.required],
-    security:['', Validators.required, Validators.minLength(3)],
-    cardType:['']
-  })
+  // cardForm = this._formBuilder.group({
+  //   name:['', Validators.required, Validators.minLength(3)],
+  //   number:['', Validators.required, Validators.maxLength(16)],
+  //   expirationMonth: new FormControl('', [Validators.required]),
+  //   expirationYear: new FormControl('', [Validators.required]),
+  //   security:['', Validators.required, Validators.minLength(3)],
+  //   //cardType:['']
+  // })
+
+  cardForm = new FormGroup({
+    //fullName: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    number: new FormControl('', [Validators.required, Validators.maxLength(16)]),
+    security: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    expirationMonth: new FormControl('', [Validators.required]),
+    expirationYear: new FormControl('', [Validators.required])
+  });
 
   constructor(private personalAddCreditCardService: PersonalAddCreditCardService, private authService: AuthService, private _formBuilder:FormBuilder, private route: ActivatedRoute, private router:Router){}
 
@@ -43,8 +57,11 @@ export class PersonalAccountComponent implements OnInit {
     console.log('loggedInUserId:', userId);
 
     if (userId) {
-      const date = parseInt(this.cardForm.controls.date.value || '');
-      const expirationDate: Date = new Date(date - 1, 1);
+      const expirationMonth = parseInt(this.cardForm.controls.expirationMonth.value || '');
+      const expirationYear = parseInt(this.cardForm.controls.expirationYear.value || '');
+      const expirationDate: Date = new Date(expirationYear, expirationMonth - 1, 1);
+      const formattedExpiration = formatDate(expirationDate, 'MM-yyyy', 'en-US');
+      console.log('Formatted expiration:', formattedExpiration);
 
       const card: Card = {
         id: 0,
@@ -60,7 +77,10 @@ export class PersonalAccountComponent implements OnInit {
           console.log(response);
           console.log('Credit card POST complete:', response);
           console.log("Credit card information: ", card);
+          this.savedCards.push(card);
+          console.log('Formatted expiration:', formattedExpiration);
         },
+
         error: (error) => {
           console.log(error);
           console.log('Credit card POST failed:', error);
@@ -118,5 +138,6 @@ export class PersonalAccountComponent implements OnInit {
   // showTransactions(){
   // this.router.navigate(['overview'], {relativeTo:this.route});
   // }
+
 }
 
