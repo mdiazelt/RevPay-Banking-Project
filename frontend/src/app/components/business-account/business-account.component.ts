@@ -8,16 +8,19 @@ import { BusinessAddCreditCardService } from 'src/app/services/business-add-cred
 import { User } from 'src/app/models/user.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { formatDate } from '@angular/common';
+import { DatePipe } from '@angular/common';
+
 
 
 @Component({
   selector: 'app-business-account',
   templateUrl: './business-account.component.html',
-  styleUrls: ['./business-account.component.css']
+  styleUrls: ['./business-account.component.css'],
+  providers: [DatePipe]
 })
 export class BusinessAccountComponent implements OnInit {
   cardForm = new FormGroup({
-    fullName: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    //fullName: new FormControl('', [Validators.required, Validators.minLength(3)]),
     number: new FormControl('', [Validators.required, Validators.maxLength(16)]),
     cvc: new FormControl('', [Validators.required, Validators.minLength(3)]),
     expirationMonth: new FormControl('', [Validators.required]),
@@ -32,12 +35,13 @@ export class BusinessAccountComponent implements OnInit {
 
   card: Card;
   userId: number;
+  id:number;
 
 
   savedCards: Card[] = [];
 
 
-  constructor(private businessAddCreditCardService: BusinessAddCreditCardService, private authService: AuthService,private fb: FormBuilder) {
+  constructor(private businessAddCreditCardService: BusinessAddCreditCardService, private authService: AuthService,private fb: FormBuilder,private datePipe: DatePipe) {
   }
 
   ngOnInit() {
@@ -54,8 +58,11 @@ export class BusinessAccountComponent implements OnInit {
       const expirationMonth = parseInt(this.cardForm.controls.expirationMonth.value || '');
       const expirationYear = parseInt(this.cardForm.controls.expirationYear.value || '');
       const expirationDate: Date = new Date(expirationYear, expirationMonth - 1, 1);
+      const formattedExpiration = formatDate(expirationDate, 'MM-yyyy', 'en-US');
+      console.log('Formatted expiration:', formattedExpiration);
+
       const card: Card = {
-        id: 0,
+        id:this.id,
         number: parseInt(this.cardForm.controls.number.value || '0'),
         expiration: expirationDate,
         cvc: parseInt(this.cardForm.controls.cvc.value || '0')
@@ -68,6 +75,10 @@ export class BusinessAccountComponent implements OnInit {
           console.log(response);
           console.log('Credit card POST complete:', response);
           console.log("Credit card information: ", card);
+          this.savedCards.push(card);
+          //const formattedExpiration = this.datePipe.transform(expirationDate, 'MMM-yyyy');
+          console.log('Formatted expiration:', formattedExpiration);
+
         },
         error: (error) => {
           console.log(error);
