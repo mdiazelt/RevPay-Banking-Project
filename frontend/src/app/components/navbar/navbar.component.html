@@ -6,5 +6,6 @@
         <a routerLink="personal" *ngIf="currentUserRole === 'personal'" mat-button>Personal Account</a>
         <a routerLink="business" *ngIf="currentUserRole === 'business'" mat-button>Business Account</a>
         <a routerLink="money" mat-button>Send/Request Money</a>
+        <a routerLink="login" (click)="loggedOut()" mat-button>Logout</a>
     </div>
 </mat-toolbar>

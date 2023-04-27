@@ -1,7 +1,9 @@
 <!-- <div routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
 <a routerLink="/personal/personal-transaction-history">Transaction History</a>
 </div> -->
-<div class="header">
+
+<section>
+<div class = "header">
     <h1>My Account</h1>
     <div>
         <a [routerLink]="['/personal/transaction-history']"> Transaction History</a>
@@ -9,35 +11,23 @@
     </div>
 </div>
 
-<section class="container">
-    <form [formGroup]="cardForm" class="form-container">
-        <mat-card>
-            <mat-card-header>
-                <mat-card-title>
-                    Enter Card Details
-                </mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <!-- <div>
-                            <mat-form-field class="full-width">
-                                <input formControlName="name" matInput placeholder="Full Name">
-                            </mat-form-field>
-                        </div> -->
+<div class="container">
+        <form [formGroup]="cardForm" class="form-container">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        Enter Card Details
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                   
                 <div>
                     <mat-form-field class="full-width">
                         <input formControlName="number" matInput type="text" maxlength="16"
                             placeholder="16-Digit Card Number" (keypress)="numbersOnly($event)">
                     </mat-form-field>
                 </div>
-                <div>
-                    <!-- <mat-form-field class="full-width" appearance="fill">
-                                <mat-label>Expiration Date</mat-label>
-                                <input formControlName="date" matInput [matMonthYearpicker]="picker" (keypress)="numbersOnly($event)">
-                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                <mat-month-year-picker #picker></mat-month-year-picker>
-                            </mat-form-field> -->
-
-                </div>
+         
                 <div>
                     <mat-form-field class="full-width">
                         <input formControlName="security" matInput type="text" placeholder="3-Digit Security Code"
@@ -67,6 +57,7 @@
                                 <mat-radio-button value="debit"> Debit </mat-radio-button>
                                 <mat-radio-button value="credit"> Credit </mat-radio-button>
                             </mat-radio-group>
+
                         </div> -->
             </mat-card-content>
             <mat-card-actions>
@@ -75,6 +66,53 @@
                 </button>
             </mat-card-actions>
             <p *ngIf="addCard">Your card has been added!</p>
+        </form>
+        <form [formGroup]="bankForm" class="form-container">
+            <mat-card class="col-md-6">
+                <mat-card-header>
+                    <mat-card-title>
+                        Link Bank Account
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                        <div>
+                            <mat-form-field class="full-width">
+                                <input formControlName="account" matInput placeholder="Account Number">
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field class="full-width">
+                                <input formControlName="routing" matInput placeholder="Routing Number">
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Account Type</mat-label>
+                                <input type="text"
+                                       placeholder="Select Account"
+                                       aria-label="Account Type"
+                                       matInput
+                                       [formControl]="myControl"
+                                       [matAutocomplete]="auto">
+                                <mat-autocomplete #auto="matAutocomplete">
+                                  <mat-option *ngFor="let option of options1" [value]="option">
+                                    {{option}}
+                                  </mat-option>
+                                </mat-autocomplete>
+                              </mat-form-field>
+                        </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button (click)="submittedBank()" mat-raised-button color="primary">
+                        Link Bank
+                    </button>
+                </mat-card-actions>
+                <p *ngIf="addBank">Bank account successfully linked!</p>
+            </mat-card>
+        </form>
+    </div>
+</section>
+
 
 
         </mat-card>

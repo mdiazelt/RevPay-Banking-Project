@@ -26,6 +26,7 @@ h1 {
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 600;
     font-size: 2em;
+    color: white;
 }
 
 .header {
@@ -36,5 +37,10 @@ a {
     padding: 30px;
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 600;
+    color: white;
+}
 
+section {
+    min-height: 100vh;
+    background: linear-gradient(to top, #4c4c4c 59%, #3f51b5 90%) no-repeat;
 }
