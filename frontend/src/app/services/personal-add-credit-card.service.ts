@@ -25,4 +25,15 @@ export class PersonalAddCreditCardService {
     return this.http.post<any>(url, card,{ headers: header })
 
   }
+  getCreditCard():Observable<any[]>{
+  const userId = localStorage.getItem('userId');
+  const url = `${AUTH_API}cards/${userId}`
+  const authToken = localStorage.getItem('userId'); 
+  let header: HttpHeaders = new HttpHeaders();
+  header.append("accept", "text/json");
+  header.append("Access-Control-Allow-Origin", "*");
+  header.append("Access-Control-Allow-Headers", "*");
+  header.append("Authorization", `Bearer ${authToken}`);
+  return this.http.get<any[]>(url,{ headers: header });
+  }
 }

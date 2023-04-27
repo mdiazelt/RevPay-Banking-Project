@@ -9,28 +9,37 @@
         <div class="amount_balance">
             <p>
                 <mat-form-field appearance="fill">
-                  <mat-label>$600.00 Available</mat-label>
-                  <input matInput placeholder="Placeholder">
+                    <mat-label>$600.00 Available</mat-label>
+                    <input matInput placeholder="Placeholder">
 
                 </mat-form-field>
-              </p>
-            
+            </p>
+
         </div>
         <!--<p class="available_amount_text">
             Available
         </p>-->
-        </div>
-
-    <!--<div class="creditCards">
-        <h3> My Cards</h3>
-        <ul>
-            <li>Card 1</li>
-            <li>Card 2</li>
-        </ul> 
-    </div>-->
-
-    <div class="child_routes">
-        <button class="account_button" (click)=back_button() mat-raised-button color="primary">Back to account</button>
-        <button class="trans_button" (click)="trans_button()" mat-raised-button color="primary">Transaction history</button>
     </div>
+    <form action="">
+        <div>
+
+            <h1 class="cardList">current cards on file:</h1>
+            <ul *ngIf="showCards">
+
+                <li class="credit-info-list" *ngFor="let card of savedCards">
+                    <!-- <div>Credit card number:{{ card.number }}</div> -->
+                    <div>{{ '**** **** **** ' + card.number.toString().slice(-4) }}</div>
+
+                    <!-- <div>expiration Date:{{ card.expiration | date:'MM-yyyy' }}</div> -->
+                    <!-- <div>expiration Date:{{ Date(card.expiration) | date:'MM-yyyy' }}</div> -->
+                    <!-- <div>expiration Date:{{ card.expiration | date:'MM-yyyy':'UTC' }}</div> -->
+
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+<div class="child_routes">
+    <button class="account_button" (click)=back_button() mat-raised-button color="primary">Back to account</button>
+    <button class="trans_button" (click)="trans_button()" mat-raised-button color="primary">Transaction history</button>
 </div>

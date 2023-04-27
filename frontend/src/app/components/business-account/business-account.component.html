@@ -102,8 +102,8 @@
                                         <mat-form-field class="mat-fields" appearance="fill">
                                             <mat-label>Month</mat-label>
                                             <input class="input-texts" matInput type="text" name="expiry" id="expiry"
-                                                maxlength="2" pattern="(0[1-9]|1[0-2])"
-                                                (keypress)="numbersOnly($event)" formControlName="expirationMonth"/>
+                                                maxlength="2" pattern="(0[1-9]|1[0-2])" (keypress)="numbersOnly($event)"
+                                                formControlName="expirationMonth" />
                                         </mat-form-field>
                                     </div>
 
@@ -112,7 +112,8 @@
                                         <mat-form-field class="mat-fields" appearance="fill">
                                             <mat-label>Year</mat-label>
                                             <input class="input-texts" matInput type="text" name="expiry" id="expiry"
-                                                maxlength="4" (keypress)="numbersOnly($event)" formControlName="expirationYear"/>
+                                                maxlength="4" (keypress)="numbersOnly($event)"
+                                                formControlName="expirationYear" />
                                         </mat-form-field>
                                     </div>
 
@@ -124,7 +125,20 @@
                         </form>
                     </mat-card>
                 </div>
-            </div>     
+                <mat-card class="card-template2">
+                    <form action="">
+                        <div>
+                            <h1 class="cardList">current cards on file:</h1>
+                            <ul>
+                                <li class="credit-info-list"*ngFor="let card of savedCards">
+                                    <div>Credit card number: {{ card.number }}</div>
+                                    <div>expiration Date: {{ card.expiration | date:'MM-yyyy' }}</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </mat-card>
+            </div>
         </div>
     </main>
 </body>
