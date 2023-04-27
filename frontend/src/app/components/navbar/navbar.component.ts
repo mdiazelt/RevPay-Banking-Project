@@ -25,4 +25,8 @@ export class NavbarComponent implements OnInit {
   get showBusinessAccountLink() {
     return this.loggedIn && this.currentUserRole === 'business';
   }
+
+  loggedOut() {
+    this.authService.logout()
+  }
 }

@@ -20,6 +20,7 @@ export class RegisterAccountComponent implements OnInit {
   email:string = "";
   phone:string = "";
   role:string = "";
+  registered:boolean = false;
   constructor(private router:Router, private registerService : RegisterService) { }
 
 
@@ -28,6 +29,7 @@ export class RegisterAccountComponent implements OnInit {
   }
 
   register() : void {
+    this.registered = !this.registered;
     let user : User = {
       username: this.username,
       passwd: this.passwd,

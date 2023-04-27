@@ -18,6 +18,10 @@ export class SendRequestMoneyComponent implements OnInit {
   completedTransaction: boolean = false;
   mounted: boolean = true;
   transType: string = "";
+  fulfillmennts: string [] = [];
+  fulfillment: string = "";
+  send: boolean = false;
+  request: boolean = false;
 
   myControl = new FormControl('');
   options1: string[] = ['Send Amount', 'Request Amount', 'Add To Wallet'];
@@ -45,7 +49,17 @@ export class SendRequestMoneyComponent implements OnInit {
   }
 
   completeTransaction() : void{
-    this.completedTransaction = !this.completedTransaction;
+
+    if (this.transType == "Send Amount"){
+      this.fulfillmennts.push(this.fulfillment);
+      this.completedTransaction = !this.completedTransaction;
+      this.send = !this.send;
+    } else if (this.transType == "Request Amount"){
+      this.fulfillmennts.push(this.fulfillment);
+      this.completedTransaction = !this.completedTransaction;
+      this.request = !this.request;
+    }
+    
     let transactions : Transactions = {
       amount:this.amount
     }

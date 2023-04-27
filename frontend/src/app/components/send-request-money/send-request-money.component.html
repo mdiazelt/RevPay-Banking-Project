@@ -2,7 +2,7 @@
     <div class="header">
         <h1>Make a Transaction</h1>
     </div>
-    <div class="container">
+    <!-- <div class="container">
         <form class="form">
             <mat-card>
                 <mat-card-header>
@@ -32,7 +32,7 @@
                 </div>
             </mat-card>
         </form>
-    </div>
+    </div> -->
     <!-- <input placeholder="Enter Contact" type = "text" [(ngModel)]="contact" #input>
     <button (click)="addContact()">Add Contact</button> -->
     
@@ -41,10 +41,16 @@
             <mat-card>
                 <mat-card-header>
                    <mat-card-title class="header">
-                    Amount
+                    Enter Transaction Details
                    </mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
+                    <div>
+                        <mat-form-field class="full-width" appearance="fill">
+                            <mat-label>Contact Name</mat-label>
+                            <input matInput placeholder="Enter Contact" type = "text" [(ngModel)]="contact" [ngModelOptions]="{standalone: true}" #input>
+                        </mat-form-field>
+                    </div>
                     <div>
                         <mat-form-field appearance="fill" floatLabel="always">
                             <mat-label>Amount</mat-label>
@@ -74,6 +80,10 @@
                         Complete Transaction
                     </button>
                     <p *ngIf="completedTransaction">Your Transaction is complete!</p>
+                    <div *ngIf="completedTransaction" class="transaction">
+                        <p *ngIf="send">You've sent ${{amount}} to {{contact}}!</p>
+                        <p *ngIf="request">You've requested ${{amount}} from {{contact}}!</p>
+                    </div>
                 </mat-card-content>
             </mat-card>
         </form>
