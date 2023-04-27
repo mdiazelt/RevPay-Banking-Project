@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
 import com.revature.BankingApp.Repository.*;
 import com.revature.BankingApp.Model.*;
+import java.util.List;
 
 @Service
 @Transactional
@@ -22,5 +23,9 @@ public class CardService {
 		Account a = accountRepository.findById(accountId).get();
 		card.setAccount(a);
 		return cardRepository.save(card);
+	}
+
+	public List<Card> listCards(long id) {
+		return this.cardRepository.findAllByAccountId(id);
 	}
 }
